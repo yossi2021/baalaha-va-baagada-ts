@@ -15,16 +15,33 @@ function Card({
       category
     }
      :Props) {
+
+      function handleClick(name: string){
+        console.log(`this ${name}`);
+      }
+      function handleClickCategory(name: string){
+        console.log(`your category book ${name}`);
+      }
     
     return ( 
-        <div className="card" >
+        <div className="card m-4" >
   <img src={image} className="card-img-top" alt={name}/>
-  <div>{category}</div>
+  <div 
+    onClick={() => handleClickCategory(category)}>
+    
+    {category}
+    </div>
   <div className="card-body">
     <h5 className="card-title">{name}</h5>
     <p className="card-text">{description}</p>
     <p className="card-text">{price}</p>
-    <a href="#" className="btn btn-primary">Go somewhere</a>
+    <a 
+    onClick={(e) => handleClick(name)}
+    href="#" 
+    className="btn btn-primary"
+  >
+    לצפייה בספרים
+    </a>
   </div>
 </div>
      );
