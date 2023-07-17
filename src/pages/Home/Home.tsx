@@ -78,8 +78,9 @@ function Home() {
         let result = [...data];
 
         if (value.length > 0){
+            const stripVal = value.trim().toLowerCase();
             result = [...data].filter(card =>
-                card.name.toLowerCase().includes(value.toLowerCase())
+                card.name.toLowerCase().includes(stripVal)
                 )
         }
             setSelectedCategory(Categories.all);
