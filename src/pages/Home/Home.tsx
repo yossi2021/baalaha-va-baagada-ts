@@ -89,11 +89,9 @@ function Home() {
 
     }
 
-    
+    if (data.length === 0) 
+    return <p>ספר זה לא קיים במאגר</p>
 
-    // function handleDisplayClic(displayType : string) {
-    //     setDisplay(displayType);
-    // }
 
     return ( 
         <>
@@ -141,7 +139,11 @@ function Home() {
 
                     </div>
             </div>
-
+        { 
+        filtered.length === 0?
+        (<p className="text-center">ספר זה לא קיים במאגר</p>)
+        : 
+        (
         <div className={`${display} p-5`}>
             {
 
@@ -154,10 +156,12 @@ function Home() {
 
                     )
         
-    }
+            }
         
-        </div>
-        </>
+                </div>
+                )
+            }
+                </>
      );
 }
 
