@@ -1,6 +1,8 @@
 .grid{
     display: flex;
+    /* flex-flow: wrap; */
     justify-content: space-around;
+    
 }
 
 .list{
@@ -8,5 +10,6 @@
     
     flex-direction: column;
     max-width: 400px;
+    align-items: center;
     
 }

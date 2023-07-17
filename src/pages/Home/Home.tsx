@@ -12,6 +12,13 @@ interface CardType {
     category: string;
 }
 
+enum Categories {
+   all = 'לכל הקטגוריות',
+   shabat = 'שבת',
+   hagim = 'הלכות חגי ישראל',
+   sederYom = 'הלכות סדר יום'
+}
+
 function Home() {
     const data = [
         {
@@ -36,19 +43,20 @@ function Home() {
         price:10 ,
         image:"	https://cdn.pixabay.com/photo/2023/06/12/16/41/wild-bee-8058943_1280.jpg" ,
         description:"יהודי יקר כל שתרצה על מנת להתחיל את יומך" ,
-        category:"הלכות יום יום"
+        category:"הלכות סדר יום"
         } 
     ];
 
-    const categories = ['לכל הקטגוריות','שבת', 'הלכות חגי ישראל','הלכות יום יום'];
+    const categories = Object.values(Categories);
 
     const [display, setDisplay]= useState('grid');
-    const [selectedCategory ,setSelectedCategory] = useState('לכל הקטגוריות');
+    const [selectedCategory ,setSelectedCategory] = useState(Categories.all);
     const [filtered , setFiltered]= useState([...data]);
+    const [search ,setSearch] = useState('');
 
-    function filterByCategory(category : string, cards: Array<CardType>):
+    function filterByCategory(category : Categories, cards: Array<CardType>):
     Array<CardType> {
-        if( category === 'לכל הקטגוריות'){
+        if( category === Categories.all){
             return cards;
         }
          return cards.filter(card=> card.category === category);
@@ -56,12 +64,31 @@ function Home() {
     
 
     function handleCategoryChange(e : React.ChangeEvent<HTMLSelectElement>){
-        const value = e.target.value;
+        const value = e.target.value as Categories;
         const filteredData =filterByCategory(value,[ ...data]);
 
         setSelectedCategory(value);
+        setSearch('');
         setFiltered(filteredData);
     };
+
+    function handleSearch (e : React.ChangeEvent<HTMLInputElement>){
+
+        const value = e.target.value;
+        let result = [...data];
+
+        if (value.length > 0){
+            result = [...data].filter(card =>
+                card.name.toLowerCase().includes(value.toLowerCase())
+                )
+        }
+            setSelectedCategory(Categories.all);
+            setSearch(value);
+            setFiltered(result);
+
+    }
+
+    
 
     // function handleDisplayClic(displayType : string) {
     //     setDisplay(displayType);
@@ -70,7 +97,8 @@ function Home() {
     return ( 
         <>
         <Title content="אתר בהלכה ובאגדה"/>
-            <div className="">
+            <div className="d-flex px-5">
+                <div>
                 <button className="btn btn-light mx-1"
                 onClick={() => setDisplay('grid')}>
                     
@@ -80,7 +108,9 @@ function Home() {
                 onClick={() => setDisplay('list')}>
                 <i className="bi-list-ul"></i>
                 </button>
-                <div>
+                </div>
+
+                <div className="d-flex alig-items-center">
                     <label >קטגוריות הספרים</label>
                     
                     <select 
@@ -99,6 +129,15 @@ function Home() {
                                     )
                         }
                     </select>
+
+                            <input 
+                            value={search} 
+                            onChange={(e) => handleSearch(e)}
+                                placeholder="חיפוש"
+                                className="form-select ms-3"
+                            />
+
+
                     </div>
             </div>
 
