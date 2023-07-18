@@ -28,12 +28,17 @@ function Home() {
 
     function handleCategoryChange(e : React.ChangeEvent<HTMLSelectElement>){
         const value = e.target.value as Categories;
+        categoryChange(value);
+    }
+
+    function categoryChange(value: Categories){
         const filteredData =filterByCategory(value,[ ...data]);
 
         setSelectedCategory(value);
         setSearch('');
         setFiltered(filteredData);
-    };
+      
+    }
 
     function handleSearch (e : React.ChangeEvent<HTMLInputElement>){
 
@@ -115,6 +120,8 @@ function Home() {
                     <Card
                         key={card.id}
                         {...card}
+                        CategoryClick={categoryChange}
+                        
                     />
 
                     )

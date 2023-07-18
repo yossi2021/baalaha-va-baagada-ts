@@ -5,6 +5,7 @@ interface Props {
     description: string;
     image : string;
     category: string;
+    CategoryClick: Function;
 }
 
 
@@ -13,23 +14,21 @@ function Card({
     price,
      description ,
      image ,
-      category
+      category,
+      CategoryClick
     }
      :Props) {
 
       function handleClick(name: string){
         console.log(`this ${name}`);
       }
-      function handleClickCategory(name: string){
-        console.log(`your category book ${name}`);
-      }
+      
     
     return ( 
         <div className="card m-4 " >
         <img src={image} className="card-img-top" alt={name}/>
         <div 
-          onClick={() => handleClickCategory(category)}>
-          
+          onClick={() => CategoryClick(category)}>
           {category}
           </div>
         <div className="card-body ">
