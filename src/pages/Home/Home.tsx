@@ -4,13 +4,14 @@ import Title from "../../components/Title";
 import './Home.css';
 import { data } from "./data";
 import { CardType, Categories } from "./types";
+import ButtonsBar from "../../components/ButtonsBar";
 
 
 
 function Home() {
     
 
-    const categories = Object.values(Categories);
+    
 
     const [display, setDisplay]= useState('grid');
     const [selectedCategory ,setSelectedCategory] = useState(Categories.all);
@@ -64,49 +65,13 @@ function Home() {
     return ( 
         <>
         <Title content="אתר בהלכה ובאגדה"/>
-            <div className="d-flex px-5 ">
-                <div>
-                <button className="btn btn-light mx-1"
-                onClick={() => setDisplay('grid')}>
-                    
-                    <i className="bi-grid-3x3-gap-fill"></i>
-                </button>
-                <button className="btn btn-light"
-                onClick={() => setDisplay('list')}>
-                <i className="bi-list-ul"></i>
-                </button>
-                </div>
-
-                <div className="d-flex alig-items-center">
-                    <label >קטגוריות הספרים</label>
-                    
-                    <select 
-                    value={selectedCategory}
-                    onChange={handleCategoryChange}
-                    className="form-select" 
-                    >
-                        {
-                                categories.map(category =>
-                                    <option
-                                    key={category}
-                                    value={category}
-                                    >
-                                        {category}
-                                    </option>
-                                    )
-                        }
-                    </select>
-
-                            <input 
-                            value={search} 
-                            onChange={(e) => handleSearch(e)}
-                                placeholder="חיפוש"
-                                className="form-select ms-3"
-                            />
-
-
-                    </div>
-            </div>
+            <ButtonsBar
+            updateDisplay={setDisplay}
+            selectedCategory={selectedCategory}
+            handleCategoryChange={handleCategoryChange}
+            search={search}
+            handleSearch={handleSearch}
+            />
         { 
         filtered.length === 0?
         (<p className="text-center">ספר זה לא קיים במאגר</p>)
