@@ -5,9 +5,9 @@ import Header from './components/Header';
 import HeaderForm from './components/HeaderForm';
 
 import Home from './pages/Home/Home';
-
-import Table, { IUser } from './components/Table';
 import Message from './components/Message';
+import Table, { IUser } from './components/Table';
+
 
 
 export enum StatusEnum {
@@ -17,19 +17,21 @@ export enum StatusEnum {
 }
 
 function App() {
-    const [users, setUsers] = useState <Array<IUser>>([]);
+  const [users, setUsers] = useState <Array<IUser>>([]);
   const [newUser,setNewUser] = useState<IUser>();
+  const [deletedUser,setDeletedUser] = useState<IUser>();
 
   function addUser(newUser: IUser) {
     newUser.id =(new Date()).getTime();
     const updated = [...users, newUser];
-    setUsers(updated);
     setNewUser(newUser);
+    setUsers(updated);
   }
 
-  function deleteUser(userId: number) {
-    const updated = users.filter(user => user.id !== userId);
+  function deleteUser(userDel: IUser) {
+    const updated = users.filter(user => user.id !== userDel.id);
     setUsers(updated);
+    setDeletedUser(userDel);
   }
 
   return (
@@ -40,25 +42,34 @@ function App() {
         users.length === 0 &&
         <Message
           type="warning"
+          showButton={false}
         >
           <div>
             No users to display
           </div>
           </Message>
       }
-
-      {
-        newUser &&
         <Message
           type="success"
-          
+          user={newUser}
+          showButton={true}
         >
-        New user:
-        <span className='fw-bold'>
+        New user: <span className='fw-bold'>
           {newUser?.name}
-        </span> , has been added succrssfully.
+        </span>, has been added succrssfully.
         </Message>
-      }
+      
+        <Message
+          type="info"
+          user={deletedUser}
+          showButton={true}
+        >
+       
+        User <span className='fw-bold'>
+          {deletedUser?.name}
+        </span>, has been deleted.
+        </Message>
+      
 
       <Table users={users} deleteUser={deleteUser}/>
       {/* <Status/> */}
