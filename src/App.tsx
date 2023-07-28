@@ -7,6 +7,8 @@ import HeaderForm from './components/HeaderForm';
 import Home from './pages/Home/Home';
 import Message from './components/Message';
 import Table, { IUser } from './components/Table';
+import { Route, Routes } from 'react-router-dom';
+import AboutUs from './pages/AboutUs';
 
 
 
@@ -37,6 +39,20 @@ function App() {
   return (
     <>
       <Header/>
+      <Routes>
+          <Route 
+            path="/"
+            element={<Home/>}
+            />
+      </Routes>
+
+      <Routes>
+          <Route 
+            path="/AboutUs"
+            element={<AboutUs/>}
+            />
+      </Routes>
+
       <HeaderForm addUser={addUser}/>
       {
         users.length === 0 &&
@@ -74,6 +90,8 @@ function App() {
       <Table users={users} deleteUser={deleteUser}/>
       {/* <Status/> */}
       <Home/>
+
+      
       
     </>
   );
