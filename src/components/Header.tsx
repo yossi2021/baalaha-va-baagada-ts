@@ -16,6 +16,11 @@ function Header() {
                         המבצעים שלנו
                     </NavLink>
                 </li>
+                <li className="nav-item me-3">
+                    <NavLink to="/books" className="nav-link">
+                        הספרים שלנו
+                    </NavLink>
+                </li>
                 
                 <li className="nav-item me-3">
                     <NavLink to="/Order" className="nav-link">

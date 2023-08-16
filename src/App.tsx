@@ -13,6 +13,7 @@ import AboutUs from './pages/AboutUs';
 import Order from './pages/Order';
 import Offers from './pages/Offers/Offers';
 import { ToastContainer } from 'react-toastify';
+import Books from './pages/books/books';
 
 
 
@@ -99,6 +100,10 @@ function App() {
           <Route 
             path="/offers"
             element={<Offers  />}
+            />
+          <Route 
+            path="/books"
+            element={<Books  />}
             />
             
       </Routes>

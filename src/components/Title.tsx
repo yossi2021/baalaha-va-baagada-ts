@@ -1,5 +1,7 @@
 interface Props{
     content : string;
+    
+    
 }
 
 function Title({content} :Props)  { 

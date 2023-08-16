@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import { Offer, dataOffers } from "../../dataOffers/offers";
+import { formatPrice } from "../../utlis/utlis";
 
 enum SortDirection{
     asc ='a-z',
@@ -12,9 +13,7 @@ function OffersTable() {
     const [search, setSearch] =useState<string>('');
     const [sort, setSort] =useState<SortDirection>(SortDirection.asc);
 
-    function formatPrice(value: number): string{
-        return `$${value}`;
-    }
+    
     
         function handleSort(value: string){
             const direction = value as SortDirection;
