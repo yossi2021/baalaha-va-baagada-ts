@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 
 import Header from './components/Header';
@@ -7,8 +8,11 @@ import HeaderForm from './components/HeaderForm';
 import Home from './pages/Home/Home';
 import Message from './components/Message';
 import Table, { IUser } from './components/Table';
-import { Route, Routes } from 'react-router-dom';
+
 import AboutUs from './pages/AboutUs';
+import Order from './pages/Order';
+import Offers from './pages/Offers/Offers';
+import { ToastContainer } from 'react-toastify';
 
 
 
@@ -38,23 +42,15 @@ function App() {
 
   return (
     <>
-      <Header/>
+      <Header />
+      <ToastContainer />
+      
+      
       <Routes>
           <Route 
             path="/"
-            element={<Home/>}
-            />
-      </Routes>
-
-      <Routes>
-          <Route 
-            path="/AboutUs"
-            element={<AboutUs/>}
-            />
-      </Routes>
-
-      <HeaderForm addUser={addUser}/>
-      {
+            element={<><HeaderForm addUser={addUser} />
+            {
         users.length === 0 &&
         <Message
           type="warning"
@@ -85,14 +81,28 @@ function App() {
           {deletedUser?.name}
         </span>, has been deleted.
         </Message>
+        <Table users={users} deleteUser={deleteUser}/>
+        <Home />
+            </>}
+            
+            />
+            
       
-
-      <Table users={users} deleteUser={deleteUser}/>
-      {/* <Status/> */}
-      <Home/>
-
-      
-      
+          <Route 
+            path="/AboutUs"
+            element={<AboutUs />}
+            />
+          <Route 
+            path="/order"
+            element={<Order  />}
+            />
+          <Route 
+            path="/offers"
+            element={<Offers  />}
+            />
+            
+      </Routes>
+    
     </>
   );
 }
