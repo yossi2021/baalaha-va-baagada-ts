@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const vacationSchema = new mongoose.Schema({
+const booksSchema = new mongoose.Schema({
     date: {
         type: Date,
         require: true,
@@ -15,6 +15,6 @@ const vacationSchema = new mongoose.Schema({
     },
 });
 
-const Vacation = mongoose.model('Vacation', vacationSchema);
+const books = mongoose.model('Books', booksSchema);
 
-exports.Vacation = Vacation;
+exports.books = books;

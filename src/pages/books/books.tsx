@@ -1,5 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { formatPrice } from "../../utlis/utlis";
+import AddForm from "./AddForm";
 
 
 interface IBooks {
@@ -12,6 +13,17 @@ interface IBooks {
 function Books() {
 
     const [books ,setBooks] =useState<Array<IBooks>>([]);
+
+        function getBooks(){
+            fetch('http://localhost:3000/books/')
+            .then(response => response.json())
+            .then(json => {
+                setBooks(json)
+            })
+        }
+
+        useEffect(getBooks,[]);
+
     return ( 
         <>
             
@@ -21,6 +33,8 @@ function Books() {
                 books.length === 0 &&
                 <div className="alert alert-info m-5">no orders yet</div>
             }
+
+           <AddForm />
 
             <table className="table table-hover">
                         <thead>

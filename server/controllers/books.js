@@ -1,15 +1,15 @@
-const { Vacation } = require('../models/Vacation');
+const { Books } = require('../models/books');
 const joi = require('joi');
 
 module.exports = {
     getAll: async function (req, res, next) {
         try {
-            const result = await Vacation.find({});
+            const result = await Books.find({});
             res.json(result);
         }
         catch (err) {
             console.log(err);
-            res.status(400).send('error getting vacations');
+            res.status(400).send('error getting Books');
         }
     },
 
@@ -29,8 +29,8 @@ module.exports = {
                 return;
             }
 
-            const newVacation = new Vacation(value);
-            const result = await newVacation.save();
+            const newBooks = new Books(value);
+            const result = await newBooks.save();
 
             res.json({
                 ...value,
@@ -39,7 +39,7 @@ module.exports = {
         }
         catch (err) {
             console.log(err);
-            res.status(400).send('error add vacation');
+            res.status(400).send('error add Books');
         }
     },
 
@@ -57,7 +57,7 @@ module.exports = {
                 return;
             }
 
-            await Vacation.deleteOne(value).exec();
+            await Books.deleteOne(value).exec();
             res.json(req.body);
         }
         catch (err) {
@@ -86,6 +86,7 @@ module.exports = {
                 return;
             }
 
+            // eslint-disable-next-line no-undef
             const result = await Card.findOneAndUpdate(
                 value
             );
