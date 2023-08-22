@@ -25,6 +25,12 @@ function Books() {
 
         useEffect(getBooks, []);
 
+        function addBooks(newBook: IBooks){
+            const updated = [...books];
+            updated.push(newBook);
+            setBooks(updated);
+        }
+
     return ( 
         <>
             
@@ -35,7 +41,7 @@ function Books() {
                 <div className="alert alert-info m-5">no orders yet</div>
             }
 
-           <AddForm />
+           <AddForm  addBooks={addBooks}/>
 
             <table className="table table-hover">
                         <thead>

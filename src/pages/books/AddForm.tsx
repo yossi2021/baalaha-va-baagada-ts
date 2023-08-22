@@ -2,7 +2,11 @@ import Joi from "joi";
 import { useState } from "react";
 import { IBooks } from "./Books";
 
-function AddForm() {
+interface Props {
+    addBooks: Function;
+}
+
+function AddForm({ addBooks }: Props ) {
     const [date, setDate] = useState<string>('');
     const [location, setLocation] = useState<string>('');
     const [price, setPrice] = useState<number>(1);
@@ -16,7 +20,7 @@ function AddForm() {
 
     
     
-            function addBooks(value: IBooks){
+            function fetchBooks(value: IBooks){
                 fetch('http://localhost:3000/books/', {
                     method: 'POST',
                     headers: {
@@ -26,8 +30,8 @@ function AddForm() {
             })
                 .then(response => response.json())
                 .then(json => {
-                    // setBooks(json)
-                    console.log(json);
+                    addBooks(json)
+                    
                 })
     }
 
@@ -52,7 +56,7 @@ function AddForm() {
 
         setError('');
         clearFields();
-        addBooks(value);
+        fetchBooks(value);
     }
 
     return ( 
@@ -103,6 +107,4 @@ function AddForm() {
 
 export default AddForm;
 
-function setBooks(json: any) {
-    throw new Error("Function not implemented.");
-}
+
