@@ -3,15 +3,15 @@ import { formatPrice } from "../../utlis/utlis";
 import AddForm from "./AddForm";
 
 
-interface IBooks {
-    _id :number;
+export interface IBooks {
+    _id: number;
     date: string;
     location: string;
     price: number;
 }
 
 function Books() {
-
+    
     const [books ,setBooks] =useState<Array<IBooks>>([]);
 
         function getBooks(){
@@ -20,9 +20,10 @@ function Books() {
             .then(json => {
                 setBooks(json)
             })
+            
         }
 
-        useEffect(getBooks,[]);
+        useEffect(getBooks, []);
 
     return ( 
         <>

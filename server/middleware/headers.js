@@ -4,7 +4,7 @@ module.exports = (req, res, next) => {
     res.set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
 
     if (req.method === 'OPTIONS') {
-        res.status(204).send('');
+        res.status(200).send('');
     }
     else {
         next();

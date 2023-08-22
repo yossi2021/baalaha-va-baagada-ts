@@ -1,4 +1,4 @@
-const { Books } = require('../models/books');
+const { Books } = require('../models/Books');
 const joi = require('joi');
 
 module.exports = {
@@ -9,7 +9,7 @@ module.exports = {
         }
         catch (err) {
             console.log(err);
-            res.status(400).send('error getting Books');
+            res.status(400).send('error getting books');
         }
     },
 

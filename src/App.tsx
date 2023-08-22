@@ -13,7 +13,7 @@ import AboutUs from './pages/AboutUs';
 import Order from './pages/Order';
 import Offers from './pages/Offers/Offers';
 import { ToastContainer } from 'react-toastify';
-import Books from './pages/books/books';
+import Books from './pages/Books/Books';
 
 
 
@@ -102,7 +102,7 @@ function App() {
             element={<Offers  />}
             />
           <Route 
-            path="/books"
+            path="/Books"
             element={<Books  />}
             />
             

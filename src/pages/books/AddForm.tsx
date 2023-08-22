@@ -1,4 +1,6 @@
+import Joi from "joi";
 import { useState } from "react";
+import { IBooks } from "./Books";
 
 function AddForm() {
     const [date, setDate] = useState<string>('');
@@ -6,22 +8,65 @@ function AddForm() {
     const [price, setPrice] = useState<number>(1);
     const [error, setError] = useState<string>('');
 
+    function clearFields(){
+        setDate('');
+        setLocation('');
+        setPrice(1);
+    }
+
+    
+    
+            function addBooks(value: IBooks){
+                fetch('http://localhost:3000/books/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(value)
+            })
+                .then(response => response.json())
+                .then(json => {
+                    // setBooks(json)
+                    console.log(json);
+                })
+    }
+
+
     function handleClick(){
-        
+        const schema = Joi.object().keys({
+            date: Joi.string().required().min(3),
+            location: Joi.string().required().min(3),
+            price: Joi.number().required().min(1)
+        });
+
+        const { error, value } = schema.validate({
+            date,
+            location,
+            price
+        });
+
+        if (error) {
+            setError(error.message);
+            return;
+        }
+
+        setError('');
+        clearFields();
+        addBooks(value);
     }
 
     return ( 
         <>
         <div className="bg-light d-flex p-4 align-items-center">
         <input 
-        value={location}
+        value={date}
         onChange={(e) => setDate(e.target.value)}
         className="form-control"
          type="text"
          placeholder="Date"
           />
         <input 
-        value={date}
+        value={location}
         onChange={(e) => setLocation(e.target.value)}
         className="form-control"
          type="text"
@@ -57,3 +102,7 @@ function AddForm() {
 }
 
 export default AddForm;
+
+function setBooks(json: any) {
+    throw new Error("Function not implemented.");
+}
