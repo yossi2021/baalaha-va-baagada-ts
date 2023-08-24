@@ -65,21 +65,21 @@ function AddForm({ addBooks }: Props ) {
         <input 
         value={date}
         onChange={(e) => setDate(e.target.value)}
-        className="form-control"
+        className="form-control me-3"
          type="text"
          placeholder="Date"
           />
         <input 
         value={location}
         onChange={(e) => setLocation(e.target.value)}
-        className="form-control"
+        className="form-control me-3"
          type="text"
          placeholder="location"
           />
         <input 
         value={price}
         onChange={(e) => setPrice(+e.target.value)}
-        className="form-control"
+        className="form-control me-3"
          type="number"
          placeholder="Price"
           />

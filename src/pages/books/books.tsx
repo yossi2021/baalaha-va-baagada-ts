@@ -31,6 +31,21 @@ function Books() {
             setBooks(updated);
         }
 
+        function delBook(book: IBooks){
+            fetch(`http://localhost:3000/books/${book._id}` , {
+                method: 'DELETE'
+            })
+                .then(response => response.json())
+                .then(json => {
+                    const updated = [...books].filter(
+                        bookItem => bookItem._id !== book._id
+                    );
+                    setBooks(updated);
+            })
+
+            
+        }
+
     return ( 
         <>
             
@@ -48,7 +63,8 @@ function Books() {
                             <tr>
                                 <th className="w-25">Date</th>
                                 <th className="w-25">Location</th>
-                                <th className="w-50">Price</th>
+                                <th className="w-35">Price</th>
+                                <th></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -60,6 +76,14 @@ function Books() {
                                 <td>{books.date}</td>
                                 <td>{books.location}</td>
                                 <td>{formatPrice (books.price)}</td>
+                                <td>
+                                    <button 
+                                    onClick={() => delBook(books)}
+                                    className="btn btn-default"
+                                    >
+                                        <i className="bi bi-trash"></i>
+                                    </button>
+                                </td>
                             </tr>
                             )
                             }
