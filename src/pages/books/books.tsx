@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { formatPrice } from "../../utlis/utlis";
 import AddForm from "./AddForm";
+import { Link } from "react-router-dom";
 
 
 export interface IBooks {
@@ -46,6 +47,7 @@ function Books() {
             
         }
 
+
     return ( 
         <>
             
@@ -77,6 +79,12 @@ function Books() {
                                 <td>{books.location}</td>
                                 <td>{formatPrice (books.price)}</td>
                                 <td>
+                                    <Link 
+                                    to={`/edit/${books._id}`}
+                                    className="btn btn-default"
+                                    >
+                                        <i className="bi bi-pen"></i>
+                                    </Link>
                                     <button 
                                     onClick={() => delBook(books)}
                                     className="btn btn-default"

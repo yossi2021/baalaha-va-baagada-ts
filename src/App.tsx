@@ -14,6 +14,7 @@ import Order from './pages/Order';
 import Offers from './pages/Offers/Offers';
 import { ToastContainer } from 'react-toastify';
 import Books from './pages/Books/Books';
+import Edit from './pages/Edit';
 
 
 
@@ -104,6 +105,10 @@ function App() {
           <Route 
             path="/Books"
             element={<Books  />}
+            />
+          <Route 
+            path="/edit/:id"
+            element={<Edit  />}
             />
             
       </Routes>
