@@ -99,7 +99,7 @@ module.exports = {
 
             const { error, value } = scheme.validate({
                 ...req.body,
-                id: req.params._id
+                _id: req.params.id
             });
 
             if (error) {
@@ -109,7 +109,7 @@ module.exports = {
             }
 
             // eslint-disable-next-line no-undef
-            const result = await Card.findOneAndUpdate(
+            const result = await Books.findOneAndUpdate(
                 value
             );
 

@@ -1,8 +1,9 @@
 import Joi from "joi";
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 function Edit() {
+    const navigate = useNavigate();
     const { id } = useParams();
     const [date, setDate] = useState<string>('');
     const [location, setLocation] = useState<string>('');
@@ -26,26 +27,26 @@ function Edit() {
     }, [] );
     
     function handleClick(){
-        // const schema = Joi.object().keys({
-        //     date: Joi.string().required().min(3),
-        //     location: Joi.string().required().min(3),
-        //     price: Joi.number().required().min(1)
-        // });
+        const schema = Joi.object().keys({
+            // date: Joi.string().required().min(3),
+            location: Joi.string().required().min(3),
+            price: Joi.number().required().min(1)
+        });
 
-        // const { error, value } = schema.validate({
-        //     date,
-        //     location,
-        //     price
-        // });
+        const { error, value } = schema.validate({
+            // date,
+            location,
+            price
+        });
 
-        // if (error) {
-        //     setError(error.message);
-        //     return;
-        // }
+        if (error) {
+            setError(error.message);
+            return;
+        }
 
-        // setError('');
-        // clearFields();
-        // fetchBooks(value);
+        setError('');
+        navigate('/books')
+        
     }
 
     return ( 
