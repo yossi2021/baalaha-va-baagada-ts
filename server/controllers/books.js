@@ -4,12 +4,12 @@ const joi = require('joi');
 module.exports = {
     getAll: async function (req, res, next) {
         try {
-            const result = await Books.find({});
+            const result = await Books.find({}).sort({"location":1});
             res.json(result);
         }
         catch (err) {
             console.log(err);
-            res.status(400).send('error getting books');
+            res.status(400).json({error: 'error getting books'});
         }
     },
     getItem: async function (req, res, next) {
@@ -23,7 +23,7 @@ module.exports = {
     
                 if (error) {
                     console.log(error.details[0].message);
-                    res.status(400).json('{ok: false, error: "invalid data"}');
+                    res.status(400).json({error:  "invalid data"});
                     return;
                 }
             const result = await Books.findOne({ _id: value._id });
@@ -31,7 +31,7 @@ module.exports = {
         }
         catch (err) {
             console.log(err);
-            res.status(400).json('{ok: false, error: "error get the book"}');
+            res.status(400).json({ error: "error get the book"});
         }
     },
 
@@ -47,7 +47,7 @@ module.exports = {
 
             if (error) {
                 console.log(error.details[0].message);
-                res.status(400).send('invalid data');
+                res.status(400).json({error:'invalid data'});
                 return;
             }
 
@@ -61,7 +61,7 @@ module.exports = {
         }
         catch (err) {
             console.log(err);
-            res.status(400).send('error add Books');
+            res.status(400).json({error: 'error add Books'});
         }
     },
 
@@ -75,112 +75,50 @@ module.exports = {
 
             if (error) {
                 console.log(error.details[0].message);
-                res.status(400).send('invalid data');
+                res.status(400).json({error:'invalid data'});
                 return;
             }
 
+            const deleted = await Books.findOne({ _id: value._id});
+
             await Books.deleteOne(value).exec();
-            res.json(value);
+            res.json(deleted);
         }
         catch (err) {
             console.log(err);
-            res.status(400).send('error delete item');
+            res.status(400).json({error:'error delete book'});
         }
     },
 
     edit: async function (req, res, next) {
         try {
             const scheme = joi.object({
-                _id: joi.string().required(),
+                
                 date: joi.string().required(),
                 location: joi.string().required(),
                 price: joi.number().min(1),
             });
 
-            const { error, value } = scheme.validate({
-                ...req.body,
-                _id: req.params.id
-            });
+            const { error, value } = scheme.validate(req.body);
 
             if (error) {
                 console.log(error.details[0].message);
-                res.status(400).send('invalid data');
+                res.status(400).json({error: 'invalid data'});
                 return;
             }
 
-            // eslint-disable-next-line no-undef
-            const result = await Books.findOneAndUpdate(
-                value
-            );
+            const book = await Books.findOneAndUpdate({
+                _id: req.params.id
+            }, value);
 
-            res.json(result);
+            if (!book) return res.status(404).send('Given ID was not found.')
+
+            const updated = await Books.findOne({ _id: req.params.id});
+            res.json(updated)
         }
         catch (err) {
             console.log(err);
-            res.status(400).send('error updating data');
+            res.status(400).json({error: 'fail to update data'});
         }
     },
-
-    // sortCards: async function (req, res, next) {
-    //     try {
-    //         const scheme = joi.object({
-    //             dir: joi.number().required().valid(1, -1).default(1),
-    //         });
-
-    //         const { error, value } = scheme.validate(req.params);
-    //         if (error) {
-    //             console.log(error.details[0].message);
-    //             res.status(400).send('invalid direction');
-    //             return;
-    //         }
-
-    //         const result =
-    //             await Card.find().sort({ "name": +value.dir }).limit(20);
-
-    //         res.json(result);
-    //     }
-    //     catch (err) {
-    //         console.log(err);
-    //         res.status(400).send('error sorting card');
-    //     }
-    // },
-
-    // exportToFile: async function (req, res, next) {
-    //     try {
-    //         const scheme = joi.object({
-    //             category: joi.string().required(),
-    //         });
-
-    //         const { error, value } = scheme.validate(req.query);
-    //         if (error) {
-    //             console.log(error.details[0].message);
-    //             res.status(400).send('invalid category');
-    //             return;
-    //         }
-
-    //         const query = value.category === 'all' ? {} : { category: value.category };
-
-    //         const result =
-    //             await Card.find(query).sort({ "name": 1 });
-
-    //         const now = new Date().getTime();
-    //         const fileName = `menu-${value.category}-${now}.txt`;
-    //         // todo: check if exports folder exists, if not create it using 'fs'
-    //         const filePath = path.join(__dirname, '../exports', fileName);
-    //         const stream = fs.createWriteStream(filePath);
-
-    //         stream.on('open', function () {
-    //             stream.write(JSON.stringify(result));
-    //             stream.end();
-    //         });
-
-    //         stream.on('finish', function () {
-    //             res.json({ name: fileName });
-    //         });
-    //     }
-    //     catch (err) {
-    //         console.log(err);
-    //         res.status(400).send('Error');
-    //     }
-    // },
 }

@@ -1,6 +1,7 @@
 import Joi from "joi";
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
+import { IBooks } from "./Books/Books";
 
 function Edit() {
     const navigate = useNavigate();
@@ -28,13 +29,13 @@ function Edit() {
     
     function handleClick(){
         const schema = Joi.object().keys({
-            // date: Joi.string().required().min(3),
+            date: Joi.string().required().min(3),
             location: Joi.string().required().min(3),
             price: Joi.number().required().min(1)
         });
 
         const { error, value } = schema.validate({
-            // date,
+            date,
             location,
             price
         });
@@ -45,9 +46,30 @@ function Edit() {
         }
 
         setError('');
-        navigate('/books')
+        editBook(value)
         
     }
+
+    function editBook(book: IBooks){
+            fetch(`http://localhost:3000/books/${id}`, {
+                method: 'PATCH',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(book)
+        })
+            .then(res => res.json())
+            .then(json => {
+                if (json.error){
+                setError(json.error)
+                    return;
+                }
+                navigate('/books')
+
+                
+            })
+}
+    
 
     return ( 
         
@@ -65,7 +87,7 @@ function Edit() {
                 readOnly={true} 
                 className="form-control-plaintext" 
                 id="date" 
-                value=""
+                value={date}
                 />
             
         </div>
