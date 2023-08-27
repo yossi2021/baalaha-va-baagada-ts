@@ -4,29 +4,27 @@ import Joi from "joi";
 import { useNavigate } from "react-router-dom";
 
 
-interface ISignupData{
-    name: string;
+interface ILoginData{
+    
     email: string;
     password: string;
 }
 
-function Signup() {
+function Login() {
     const navigate = useNavigate();
-    const [name, setName] = useState<string>('');
+    
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
     // const [error, setError] = useState<string>('');
 
     function submit(){
         const schema = Joi.object().keys({
-            name: Joi.string().required().min(2).max(256),
             email: Joi.string().required().min(6).max(255).email({ tlds:{
             allow: false}}),
             password: Joi.string().required().min(6).max(30)
         });
 
         const { error, value } = schema.validate({
-            name,
             email,
             password
         });
@@ -36,11 +34,11 @@ function Signup() {
             console.log(error.message);
             return;
         }
-        regiser(value);
+        login(value);
     }
 
-    function regiser(data: ISignupData){
-        fetch('http://localhost:3000/users/signup', {
+    function login(data: ILoginData){
+        fetch('http://localhost:3000/users/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -49,7 +47,8 @@ function Signup() {
     })
         .then(response => response.json())
         .then(json => {
-            navigate('/login');
+            localStorage.setItem('token', json.token);
+            navigate('/books');
             
         })
 }
@@ -58,18 +57,9 @@ function Signup() {
         <>
         <div className="p-3 form-max-w m-auto" >
             <Title
-                content="sign Up"
+                content="Login"
             />
-            <div className="mb-3">
-                <input 
-                type="text" 
-                className="form-control"
-                placeholder="Name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                />
-    `           
-            </div>
+            
             <div className="mb-3">
                 <input 
                 type="email" 
@@ -95,11 +85,13 @@ function Signup() {
             onClick={submit}
             className="btn btn-primary btn-lg">
 
-                Sign Up
+                Login
             </button>
         </div>
         </>
      );
 }
 
-export default Signup;
+
+
+export default Login;

@@ -60,7 +60,7 @@ function Header() {
                 </li>
                 <li className="nav-item me-3">
                     <NavLink 
-                        to="/signin" 
+                        to="/login" 
                         className="nav-link"
                         aria-current="page"
                         >

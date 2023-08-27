@@ -16,6 +16,7 @@ import { ToastContainer } from 'react-toastify';
 import Books from './pages/Books/Books';
 import Edit from './pages/Edit';
 import Signup from './auth/Signup';
+import Login from './auth/Login';
 
 
 
@@ -114,6 +115,10 @@ function App() {
           <Route 
             path="/signup"
             element={<Signup  />}
+            />
+          <Route 
+            path="/login"
+            element={<Login  />}
             />
             
       </Routes>
