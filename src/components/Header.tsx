@@ -12,25 +12,68 @@ function Header() {
             <ul className="navbar-nav flex-row">
                 
                 <li className="nav-item me-3">
-                    <NavLink to="/Offers" className="nav-link">
-                        המבצעים שלנו
+                    <NavLink 
+                        to="/Offers" 
+                        className="nav-link"
+                        aria-current="page"
+                        >
+                            המבצעים שלנו
                     </NavLink>
                 </li>
                 <li className="nav-item me-3">
-                    <NavLink to="/books" className="nav-link">
-                        הספרים שלנו
+                    <NavLink 
+                        to="/books" 
+                        className="nav-link"
+                        aria-current="page"
+                        >
+                            הספרים שלנו
                     </NavLink>
                 </li>
                 
                 <li className="nav-item me-3">
-                    <NavLink to="/Order" className="nav-link">
-                        לאן לשלוח
+                    <NavLink 
+                        to="/Order" 
+                        className="nav-link"
+                        aria-current="page"
+                        >
+                            לאן לשלוח
                         </NavLink>
                 </li>
 
                 <li className="nav-item me-3">
-                    <NavLink to="/AboutUs" className="nav-link">
-                        אודותינו
+                    <NavLink 
+                        to="/AboutUs" 
+                        className="nav-link"
+                        aria-current="page"
+                        >
+                            אודותינו
+                    </NavLink>
+                </li>
+                <li className="nav-item me-3">
+                    <NavLink 
+                        to="/signup" 
+                        className="nav-link"
+                        aria-current="page"
+                        >
+                            הרשם כאן
+                    </NavLink>
+                </li>
+                <li className="nav-item me-3">
+                    <NavLink 
+                        to="/signin" 
+                        className="nav-link"
+                        aria-current="page"
+                        >
+                           התחבר
+                    </NavLink>
+                </li>
+                <li className="nav-item me-3">
+                    <NavLink 
+                        to="/signout" 
+                        className="nav-link"
+                        aria-current="page"
+                        >
+                            התנתק
                     </NavLink>
                 </li>
             </ul>    
