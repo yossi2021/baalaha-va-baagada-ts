@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { formatPrice } from "../../utlis/utlis";
 import AddForm from "./AddForm";
 import { Link } from "react-router-dom";
+import { getToken } from "../../auth/tokenMgmt";
+import { getRequest } from "../../services/apiService";
 
 
 export interface IBooks {
@@ -16,12 +18,13 @@ function Books() {
     const [books ,setBooks] =useState<Array<IBooks>>([]);
 
         function getBooks(){
-            fetch('http://localhost:3000/books/')
-            .then(response => response.json())
-            .then(json => {
-                setBooks(json)
-            })
-            
+           const res = getRequest('books')
+           if(!res) return;
+
+                res.then(response => response.json())
+                .then(json => {
+                    setBooks(json)
+                })  
         }
 
         useEffect(getBooks, []);
