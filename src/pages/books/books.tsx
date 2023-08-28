@@ -92,7 +92,7 @@ function Books() {
                                     onClick={() => delBook(books)}
                                     className="btn btn-default"
                                     >
-                                        <i className="bi bi-trash"></i>
+                                        <i className="bi-trash"></i>
                                     </button>
                                 </td>
                             </tr>

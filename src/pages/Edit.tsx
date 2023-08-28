@@ -2,6 +2,7 @@ import Joi from "joi";
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { IBooks } from "./Books/Books";
+import { getRequest } from "../services/apiService";
 
 function Edit() {
     const navigate = useNavigate();
@@ -12,8 +13,10 @@ function Edit() {
     const [error, setError] = useState<string>('');
 
     useEffect(() =>{
-        fetch(`http://localhost:3000/books/${id}`) 
-                .then(response => response.json())
+        const res = getRequest(`books/${id}`)
+           if(!res) return;
+        
+                res.then(response => response.json())
                 .then(json => {
                     if (json.ok === false){
                         setError('error get the data')
