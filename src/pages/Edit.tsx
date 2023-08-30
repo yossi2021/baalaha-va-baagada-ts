@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { IBooks } from "./Books/Books";
 import { getRequest } from "../services/apiService";
+import { formatDate } from "../utlis/utlis";
 
 function Edit() {
     const navigate = useNavigate();
@@ -28,7 +29,7 @@ function Edit() {
                     
                     
             })
-    }, [] );
+    }, [id] );
     
     function handleClick(){
         const schema = Joi.object().keys({
@@ -49,8 +50,7 @@ function Edit() {
         }
 
         setError('');
-        editBook(value)
-        
+        editBook(value);
     }
 
     function editBook(book: IBooks){
@@ -67,13 +67,11 @@ function Edit() {
                 setError(json.error)
                     return;
                 }
-                navigate('/books')
 
-                
+                navigate('/books');  
             })
 }
     
-
     return ( 
         
         <>
@@ -84,14 +82,9 @@ function Edit() {
                 className="form-label">
                     Date
             </label>
-            
-            <input 
-                type="text" 
-                readOnly={true} 
-                className="form-control-plaintext" 
-                id="date" 
-                value={date}
-                />
+            <div>
+                {formatDate(date)}
+            </div>
             
         </div>
 
@@ -123,10 +116,8 @@ function Edit() {
          type="number"
          placeholder="Price"
           />
-
           </div>
         
-
           <button onClick={handleClick}
           className="btn btn-info ms-3"
           >
@@ -139,11 +130,8 @@ function Edit() {
           >
             Cancel
           </Link>
-
-
     </div>
 
-    
     {
             error &&
             <div className="text-danger">

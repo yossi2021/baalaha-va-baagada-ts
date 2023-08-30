@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import { formatPrice } from "../../utlis/utlis";
+import { formatDate, formatPrice } from "../../utlis/utlis";
 import AddForm from "./AddForm";
 import { Link } from "react-router-dom";
-import { getToken } from "../../auth/tokenMgmt";
 import { getRequest } from "../../services/apiService";
 
 
@@ -18,12 +17,12 @@ function Books() {
     const [books ,setBooks] =useState<Array<IBooks>>([]);
 
         function getBooks(){
-           const res = getRequest('books')
-           if(!res) return;
+           const res = getRequest('books');
+           if (!res) return;
 
-                res.then(response => response.json())
+            res.then(response => response.json())
                 .then(json => {
-                    setBooks(json)
+                    setBooks(json);
                 })  
         }
 
@@ -36,7 +35,7 @@ function Books() {
         }
 
         function delBook(book: IBooks){
-            fetch(`http://localhost:3000/books/${book._id}` , {
+            fetch(`http://localhost:3000/books/${book._id}`, {
                 method: 'DELETE'
             })
                 .then(response => response.json())
@@ -68,7 +67,7 @@ function Books() {
                             <tr>
                                 <th className="w-25">Date</th>
                                 <th className="w-25">Location</th>
-                                <th className="w-35">Price</th>
+                                <th className="w-50">Price</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -78,7 +77,7 @@ function Books() {
                             {
                             books.map(books=> 
                             <tr key={books._id}>
-                                <td>{books.date}</td>
+                                <td>{formatDate(books.date)}</td>
                                 <td>{books.location}</td>
                                 <td>{formatPrice (books.price)}</td>
                                 <td>
@@ -86,8 +85,9 @@ function Books() {
                                     to={`/edit/${books._id}`}
                                     className="btn btn-default"
                                     >
-                                        <i className="bi bi-pen"></i>
+                                        <i className="bi-pen"></i>
                                     </Link>
+                                    
                                     <button 
                                     onClick={() => delBook(books)}
                                     className="btn btn-default"
@@ -97,7 +97,7 @@ function Books() {
                                 </td>
                             </tr>
                             )
-                            }
+                        }
         
                         </tbody>
                     </table>

@@ -10,6 +10,5 @@ export const getToken = (): string => {
 
 export const verifyToken = (): boolean => {
    const token = getToken();
-   return token.length > 0
-
+   return token.length > 0;
 }

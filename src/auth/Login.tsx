@@ -6,14 +6,12 @@ import { setToken } from "./tokenMgmt";
 
 
 interface ILoginData{
-    
     email: string;
     password: string;
 }
 
 function Login() {
     const navigate = useNavigate();
-    
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
     // const [error, setError] = useState<string>('');

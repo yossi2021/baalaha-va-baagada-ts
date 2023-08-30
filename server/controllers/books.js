@@ -4,12 +4,12 @@ const joi = require('joi');
 module.exports = {
     getAll: async function (req, res, next) {
         try {
-            const result = await Books.find({}).sort({"location":1});
+            const result = await Books.find({}).sort({ "location": 1 });
             res.json(result);
         }
         catch (err) {
             console.log(err);
-            res.status(400).json({error: 'error getting books'});
+            res.status(400).json({ error: "error getting books" });
         }
     },
     getItem: async function (req, res, next) {
@@ -23,7 +23,7 @@ module.exports = {
     
                 if (error) {
                     console.log(error.details[0].message);
-                    res.status(400).json({error:  "invalid data"});
+                    res.status(400).json({error:  "invalid data" });
                     return;
                 }
             const result = await Books.findOne({ _id: value._id });
@@ -31,7 +31,7 @@ module.exports = {
         }
         catch (err) {
             console.log(err);
-            res.status(400).json({ error: "error get the book"});
+            res.status(400).json({ error: "error get the book" });
         }
     },
 
@@ -47,7 +47,7 @@ module.exports = {
 
             if (error) {
                 console.log(error.details[0].message);
-                res.status(400).json({error:'invalid data'});
+                res.status(400).json({ error: "invalid data" });
                 return;
             }
 
@@ -61,7 +61,7 @@ module.exports = {
         }
         catch (err) {
             console.log(err);
-            res.status(400).json({error: 'error add Books'});
+            res.status(400).json({error: "error add Books"});
         }
     },
 
@@ -75,7 +75,7 @@ module.exports = {
 
             if (error) {
                 console.log(error.details[0].message);
-                res.status(400).json({error:'invalid data'});
+                res.status(400).json({ error:"invalid data" });
                 return;
             }
 
@@ -86,7 +86,7 @@ module.exports = {
         }
         catch (err) {
             console.log(err);
-            res.status(400).json({error:'error delete book'});
+            res.status(400).json({ error: "error delete book" });
         }
     },
 
@@ -103,7 +103,7 @@ module.exports = {
 
             if (error) {
                 console.log(error.details[0].message);
-                res.status(400).json({error: 'invalid data'});
+                res.status(400).json( {error: "invalid data" });
                 return;
             }
 
@@ -113,12 +113,12 @@ module.exports = {
 
             if (!book) return res.status(404).send('Given ID was not found.')
 
-            const updated = await Books.findOne({ _id: req.params.id});
+            const updated = await Books.findOne({ _id: req.params.id });
             res.json(updated)
         }
         catch (err) {
             console.log(err);
-            res.status(400).json({error: 'fail to update data'});
+            res.status(400).json({ error: "fail to update data" });
         }
     },
 }

@@ -31,47 +31,47 @@ function Header() {
                 </li>
                 
                 <li className="nav-item me-3">
-                    <NavLink 
-                        to="/Order" 
+                    <NavLink                         
                         className="nav-link"
                         aria-current="page"
+                        to="/Order"
                         >
                             לאן לשלוח
                         </NavLink>
                 </li>
 
                 <li className="nav-item me-3">
-                    <NavLink 
-                        to="/AboutUs" 
+                    <NavLink                         
                         className="nav-link"
                         aria-current="page"
+                        to="/AboutUs"
                         >
                             אודותינו
                     </NavLink>
                 </li>
                 <li className="nav-item me-3">
-                    <NavLink 
-                        to="/signup" 
+                    <NavLink                         
                         className="nav-link"
                         aria-current="page"
+                        to="/signup"
                         >
                             הרשם כאן
                     </NavLink>
                 </li>
                 <li className="nav-item me-3">
                     <NavLink 
-                        to="/login" 
                         className="nav-link"
                         aria-current="page"
+                        to="/login"
                         >
                            התחבר
                     </NavLink>
                 </li>
                 <li className="nav-item me-3">
-                    <NavLink 
-                        to="/signout" 
+                    <NavLink                         
                         className="nav-link"
                         aria-current="page"
+                        to="/signout"
                         >
                             התנתק
                     </NavLink>

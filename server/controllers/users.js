@@ -24,6 +24,7 @@ module.exports = {
             const user = await User.findOne({ email: value.email });
             if (!user) throw Error;
             const validPassword = await bcrypt.compare(value.password, user.password);
+            // eslint-disable-next-line no-throw-literal
             if (!validPassword) throw 'Invalid password';
 
             const param = { email: value.email };

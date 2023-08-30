@@ -93,31 +93,31 @@ function App() {
             
       
           <Route 
-            path="/AboutUs"
+            path='/AboutUs'
             element={<AboutUs />}
             />
           <Route 
-            path="/order"
+            path='/order'
             element={<Order  />}
             />
           <Route 
-            path="/offers"
+            path='/offers'
             element={<Offers  />}
             />
           <Route 
-            path="/Books"
+            path='/Books'
             element={<Books  />}
             />
           <Route 
-            path="/edit/:id"
+            path='/edit/:id'
             element={<Edit  />}
             />
           <Route 
-            path="/signup"
+            path='/signup'
             element={<Signup  />}
             />
           <Route 
-            path="/login"
+            path='/login'
             element={<Login  />}
             />
             
