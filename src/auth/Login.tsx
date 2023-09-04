@@ -6,12 +6,11 @@ import { setToken } from "./tokenMgmt";
 import { postRequest } from "../services/apiService";
 
 
-interface ILoginData{
-    email: string;
-    password: string;
+interface Props {
+    handler: Function;
 }
 
-function Login() {
+function Login({handler} : Props) {
     const navigate = useNavigate();
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
@@ -34,27 +33,10 @@ function Login() {
             console.log(error.message);
             return;
         }
-        login(value);
+        handler(value);
     }
 
-    function login(data: ILoginData){
-        const res = postRequest(
-            'users/login',
-            data,
-            false
-        );
-
-        if (!res) return;
     
-        res.then(response => response.json())
-        .then(json => {
-            setToken(json.token);
-            localStorage.setItem('admin', json.isAdmin)
-            localStorage.setItem('user', json.name)
-            navigate('/books');
-            
-        })
-}
 
     return ( 
         <>

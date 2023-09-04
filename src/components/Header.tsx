@@ -1,25 +1,13 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import Logout from "../auth/Logout";
 import User from "./User";
-import { useEffect, useState } from "react";
 
-function Header() {
-    const [userName, setUserName] = useState('');
+interface Props {
+    userName: string;
+    handleLogout: Function;
+}
 
-    const navigate= useNavigate();
-
-    useEffect(() => {
-        const name = localStorage.getItem('user');
-        if (!name) return;
-        setUserName(name);
-    }, [])
-
-        function handleLogout(){
-            localStorage.clear();
-            setUserName('')
-            navigate('/login');
-        }
-    
+function Header({userName, handleLogout} : Props) {
     return ( 
         <header>
     <nav className="navbar navbar-dark bg-dark ">
@@ -103,7 +91,7 @@ function Header() {
         </div>
     </nav>
     
-        <User  userName={userName}/>
+        <User  userName={userName} />
     </header>
 
     

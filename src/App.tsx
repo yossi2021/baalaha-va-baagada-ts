@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import './App.css';
 
 import Header from './components/Header';
@@ -19,8 +19,13 @@ import Signup from './auth/Signup';
 import Login from './auth/Login';
 import RouetGuard from './auth/RouteGuard';
 import AdminOnly from './auth/AdminOnly';
+import { setToken } from './auth/tokenMgmt';
+import { postRequest } from './services/apiService';
 
-
+interface ILoginData{
+  email: string;
+  password: string;
+}
 
 export enum StatusEnum {
   active ='active',
@@ -46,9 +51,49 @@ function App() {
     setDeletedUser(userDel);
   }
 
+  const [userName, setUserName] = useState('');
+
+  const navigate= useNavigate();
+
+  // useEffect(() => {
+  //     const name = localStorage.getItem('user');
+  //     if (!name) return;
+  //     setUserName(name);
+  // }, []
+  // )
+
+      function handleLogout(){
+          localStorage.clear();
+          setUserName('')
+          navigate('/login');
+      }
+
+      function login(data: ILoginData){
+        const res = postRequest(
+            'users/login',
+            data,
+            false
+        );
+
+        if (!res) return;
+    
+        res.then(response => response.json())
+        .then(json => {
+            setToken(json.token);
+            localStorage.setItem('admin', json.isAdmin)
+            // localStorage.setItem('user', json.name)
+            setUserName(json.name);
+            navigate('/books');
+            
+        })
+}
+  
   return (
     <>
-      <Header />
+      <Header 
+        userName={userName}
+        handleLogout={handleLogout}
+      />
       <ToastContainer />
       
       
@@ -127,7 +172,7 @@ function App() {
             />
           <Route 
             path='/login'
-            element={<Login />}
+            element={<Login handler={login}/>}
             />
           <Route 
             path='/admin'
