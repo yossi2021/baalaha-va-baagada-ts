@@ -3,6 +3,7 @@ import Title from "../components/Title";
 import Joi from "joi";
 import { useNavigate } from "react-router-dom";
 import { postRequest } from "../services/apiService";
+import { toast } from "react-toastify";
 
 
 interface ISignupData{
@@ -48,9 +49,15 @@ function Signup() {
         );
 
         if (!res) return;
+
         res.then(response => response.json())
-        .then(json => {
-            navigate('/login');
+            .then(json => {
+                if (json.error) {
+                    toast.error(json.error)
+                    return;
+                }
+                
+                navigate('/login');
             
         })
 }

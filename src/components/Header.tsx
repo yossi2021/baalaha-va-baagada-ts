@@ -1,8 +1,27 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Logout from "../auth/Logout";
+import User from "./User";
+import { useEffect, useState } from "react";
 
 function Header() {
+    const [userName, setUserName] = useState('');
+
+    const navigate= useNavigate();
+
+    useEffect(() => {
+        const name = localStorage.getItem('user');
+        if (!name) return;
+        setUserName(name);
+    }, [])
+
+        function handleLogout(){
+            localStorage.clear();
+            setUserName('')
+            navigate('/login');
+        }
+    
     return ( 
+        <header>
     <nav className="navbar navbar-dark bg-dark ">
         <div className="container-fluid">
             <a className="navbar-brand " href="/">
@@ -78,12 +97,14 @@ function Header() {
                     </NavLink>
                 </li>
                 <li className="nav-item">
-                    <Logout />
+                    <Logout  handler={handleLogout}/>
                 </li>
             </ul>    
         </div>
     </nav>
     
+        <User  userName={userName}/>
+    </header>
 
     
      );

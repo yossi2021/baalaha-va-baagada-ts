@@ -1,24 +1,18 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
-import { useNavigate } from "react-router-dom";
-import { removeToken } from "./tokenMgmt";
+interface Props {
+    handler : Function;
+}
 
-function  Logout() {
-        const navigate = useNavigate();
+function  Logout({ handler} : Props) {
         
-        function handleLogout(): void{
-            // removeToken();
-            localStorage.clear();
-            navigate('/login');
-        }
 
     return ( 
            
-            <a 
-            onClick={handleLogout}
-            className="nav-link"
+            <button 
+            onClick={(e) => handler()}
+            className="btn btn-link nav-link"
             >
                  התנתק
-            </a>
+            </button>
      );
 }
 
