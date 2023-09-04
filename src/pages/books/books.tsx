@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { formatDate, formatPrice } from "../../utlis/utlis";
 import AddForm from "./AddForm";
 import { Link } from "react-router-dom";
-import { getRequest } from "../../services/apiService";
+import { deleteRequest, getRequest } from "../../services/apiService";
 
 
 export interface IBooks {
@@ -35,10 +35,12 @@ function Books() {
         }
 
         function delBook(book: IBooks){
-            fetch(`http://localhost:3000/books/${book._id}`, {
-                method: 'DELETE'
-            })
-                .then(response => response.json())
+            const res = deleteRequest(
+                `books/${book._id}`
+                );
+                if (!res) return;
+
+                res.then(response => response.json())
                 .then(json => {
                     const updated = [...books].filter(
                         bookItem => bookItem._id !== book._id

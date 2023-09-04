@@ -17,6 +17,8 @@ import Books from './pages/Books/Books';
 import Edit from './pages/Edit';
 import Signup from './auth/Signup';
 import Login from './auth/Login';
+import RouetGuard from './auth/RouteGuard';
+import AdminOnly from './auth/AdminOnly';
 
 
 
@@ -106,19 +108,30 @@ function App() {
             />
           <Route 
             path='/Books'
-            element={<Books  />}
+            element={
+              <RouetGuard>
+                <Books />
+              </RouetGuard>}
             />
           <Route 
             path='/edit/:id'
-            element={<Edit  />}
+            element={
+              <RouetGuard>
+                <Edit />
+              </RouetGuard>
+            }
             />
           <Route 
             path='/signup'
-            element={<Signup  />}
+            element={<Signup />}
             />
           <Route 
             path='/login'
-            element={<Login  />}
+            element={<Login />}
+            />
+          <Route 
+            path='/admin'
+            element={<AdminOnly />}
             />
             
       </Routes>

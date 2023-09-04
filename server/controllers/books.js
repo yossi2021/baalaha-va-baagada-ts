@@ -9,7 +9,7 @@ module.exports = {
         }
         catch (err) {
             console.log(err);
-            res.status(400).json({ error: "error getting books" });
+            res.status(400).json({ error: 'error getting books' });
         }
     },
     getItem: async function (req, res, next) {
@@ -75,11 +75,11 @@ module.exports = {
 
             if (error) {
                 console.log(error.details[0].message);
-                res.status(400).json({ error:"invalid data" });
+                res.status(400).json({ error: "invalid data" });
                 return;
             }
 
-            const deleted = await Books.findOne({ _id: value._id});
+            const deleted = await Books.findOne({ _id: value._id });
 
             await Books.deleteOne(value).exec();
             res.json(deleted);
@@ -93,7 +93,6 @@ module.exports = {
     edit: async function (req, res, next) {
         try {
             const scheme = joi.object({
-                
                 date: joi.string().required(),
                 location: joi.string().required(),
                 price: joi.number().min(1),

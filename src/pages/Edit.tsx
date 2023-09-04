@@ -2,7 +2,7 @@ import Joi from "joi";
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { IBooks } from "./Books/Books";
-import { getRequest } from "../services/apiService";
+import { getRequest, patchRequest } from "../services/apiService";
 import { formatDate } from "../utlis/utlis";
 
 function Edit() {
@@ -54,14 +54,13 @@ function Edit() {
     }
 
     function editBook(book: IBooks){
-            fetch(`http://localhost:3000/books/${id}`, {
-                method: 'PATCH',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(book)
-        })
-            .then(res => res.json())
+            const res = patchRequest(
+                    `books/${id}`,
+                book
+                );
+                if (!res) return;
+            
+        res.then(res => res.json())
             .then(json => {
                 if (json.error){
                 setError(json.error)

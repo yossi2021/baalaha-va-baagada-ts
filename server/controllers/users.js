@@ -35,6 +35,7 @@ module.exports = {
                 id: user._id,
                 email: user.email,
                 name: user.name,
+                isAdmin: user.isAdmin
             });
         }
         catch (err) {

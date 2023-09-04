@@ -1,4 +1,5 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import Logout from "../auth/Logout";
 
 function Header() {
     return ( 
@@ -13,20 +14,29 @@ function Header() {
                 
                 <li className="nav-item me-3">
                     <NavLink 
-                        to="/Offers" 
                         className="nav-link"
                         aria-current="page"
+                        to="/Offers" 
                         >
                             המבצעים שלנו
                     </NavLink>
                 </li>
                 <li className="nav-item me-3">
-                    <NavLink 
-                        to="/books" 
+                    <NavLink  
                         className="nav-link"
                         aria-current="page"
+                        to="/books"
                         >
                             הספרים שלנו
+                    </NavLink>
+                </li>
+                <li className="nav-item me-3">
+                    <NavLink 
+                        className="nav-link"
+                        aria-current="page"
+                        to="/admin" 
+                        >
+                            מנהל בלבד
                     </NavLink>
                 </li>
                 
@@ -67,14 +77,8 @@ function Header() {
                            התחבר
                     </NavLink>
                 </li>
-                <li className="nav-item me-3">
-                    <NavLink                         
-                        className="nav-link"
-                        aria-current="page"
-                        to="/signout"
-                        >
-                            התנתק
-                    </NavLink>
+                <li className="nav-item">
+                    <Logout />
                 </li>
             </ul>    
         </div>

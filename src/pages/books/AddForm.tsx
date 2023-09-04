@@ -1,6 +1,7 @@
 import Joi from "joi";
 import { useState } from "react";
 import { IBooks } from "./Books";
+import { postRequest } from "../../services/apiService";
 
 interface Props {
     addBooks: Function;
@@ -21,14 +22,14 @@ function AddForm({ addBooks }: Props ) {
     
     
             function fetchBooks(value: IBooks){
-                fetch('http://localhost:3000/books/', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(value)
-            })
-                .then(response => response.json())
+                const res = postRequest(
+                    'books/',
+                    value
+                );
+
+            if (!res) return
+
+                res.then(response => response.json())
                 .then(json => {
                     addBooks(json)  
                 })
