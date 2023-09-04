@@ -1,9 +1,8 @@
 import { useState } from "react";
 import Title from "../components/Title";
 import Joi from "joi";
-import { useNavigate } from "react-router-dom";
-import { setToken } from "./tokenMgmt";
-import { postRequest } from "../services/apiService";
+
+
 
 
 interface Props {
@@ -11,7 +10,7 @@ interface Props {
 }
 
 function Login({handler} : Props) {
-    const navigate = useNavigate();
+    
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
     // const [error, setError] = useState<string>('');
