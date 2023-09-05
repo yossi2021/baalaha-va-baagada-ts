@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
-import { formatDate, formatPrice } from "../../utlis/utlis";
+import { createContext, useEffect, useState } from "react";
 import AddForm from "./AddForm";
-import { Link } from "react-router-dom";
 import { deleteRequest, getRequest } from "../../services/apiService";
-
+import Panel from "../../components/Panel";
+import TableRows from "./TableRows";
+;
 
 export interface IBooks {
     _id: number;
@@ -12,8 +12,17 @@ export interface IBooks {
     price: number;
 }
 
+export interface Context {
+    books: Array<IBooks>;
+    delBook: Function;
+}
+
+export const BookContext = createContext<Context>({
+    books: [],
+    delBook: Function
+});
+
 function Books() {
-    
     const [books ,setBooks] =useState<Array<IBooks>>([]);
 
         function getBooks(){
@@ -53,58 +62,37 @@ function Books() {
 
 
     return ( 
-        <>
-            
-            <div className="text-center">books</div>
+            <BookContext.Provider value={{books , delBook}}>
+                <div className="text-center">books</div>
 
-            {
+                {
                 books.length === 0 &&
                 <div className="alert alert-info m-5">no orders yet</div>
-            }
+                }
 
-           <AddForm  addBooks={addBooks}/>
+            <Panel>
 
-            <table className="table table-hover">
-                        <thead>
-                            <tr>
-                                <th className="w-25">Date</th>
-                                <th className="w-25">Location</th>
-                                <th className="w-50">Price</th>
-                                <th></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                    
-                        
-                            {
-                            books.map(books=> 
-                            <tr key={books._id}>
-                                <td>{formatDate(books.date)}</td>
-                                <td>{books.location}</td>
-                                <td>{formatPrice (books.price)}</td>
-                                <td>
-                                    <Link 
-                                    to={`/edit/${books._id}`}
-                                    className="btn btn-default"
-                                    >
-                                        <i className="bi-pen"></i>
-                                    </Link>
-                                    
-                                    <button 
-                                    onClick={() => delBook(books)}
-                                    className="btn btn-default"
-                                    >
-                                        <i className="bi-trash"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                            )
-                        }
+                <AddForm  addBooks={addBooks}/>
+
+                    <table className="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th className="w-25">Date</th>
+                                        <th className="w-25">Location</th>
+                                        <th className="w-50">Price</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {
+                                    <TableRows  />
+                                }
+                
+                                </tbody>
+                            </table>
+                    </Panel>
+                </BookContext.Provider>  
         
-                        </tbody>
-                    </table>
-            
-        </>
      );
 }
 

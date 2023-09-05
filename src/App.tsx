@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { createContext, useState } from 'react';
 import { Route, Routes, useNavigate } from 'react-router-dom';
 import './App.css';
 
@@ -27,6 +27,15 @@ interface ILoginData{
   password: string;
 }
 
+interface Context {
+  userName: string;
+  handleLogout: Function
+  login: Function;
+  isAdmin: boolean;
+}
+
+export const AppContext = createContext<Context | null>(null);
+
 export enum StatusEnum {
   active ='active',
   expired = 'expired',
@@ -35,6 +44,7 @@ export enum StatusEnum {
 
 function App() {
   const [users, setUsers] = useState <Array<IUser>>([]);
+  const [isAdmin, setIsAdmin] = useState(false);
   const [newUser,setNewUser] = useState<IUser>();
   const [deletedUser,setDeletedUser] = useState<IUser>();
 
@@ -55,12 +65,6 @@ function App() {
 
   const navigate= useNavigate();
 
-  // useEffect(() => {
-  //     const name = localStorage.getItem('user');
-  //     if (!name) return;
-  //     setUserName(name);
-  // }, []
-  // )
 
       function handleLogout(){
           localStorage.clear();
@@ -81,7 +85,7 @@ function App() {
         .then(json => {
             setToken(json.token);
             localStorage.setItem('admin', json.isAdmin)
-            // localStorage.setItem('user', json.name)
+            setIsAdmin(json.isAdmin);
             setUserName(json.name);
             navigate('/books');
             
@@ -89,11 +93,13 @@ function App() {
 }
   
   return (
-    <>
-      <Header 
-        userName={userName}
-        handleLogout={handleLogout}
-      />
+    <AppContext.Provider value={{
+      userName,
+       handleLogout,
+        login,
+        isAdmin
+        }}>
+      <Header />
       <ToastContainer />
       
       
@@ -181,7 +187,7 @@ function App() {
             
       </Routes>
     
-    </>
+    </AppContext.Provider>
   );
 }
 
