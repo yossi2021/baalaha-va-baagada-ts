@@ -1,8 +1,13 @@
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import Logout from "../auth/Logout";
 import User from "./User";
+import { AppContext } from "../App";
 
 function Header() {
+    const context = useContext(AppContext);
+    const isLoggedIn = context && context.userName.length> 0;
+
     return ( 
         <header>
     <nav className="navbar navbar-dark bg-dark ">
@@ -13,6 +18,15 @@ function Header() {
             </a>
             
             <ul className="navbar-nav flex-row">
+                <li className="nav-item me-3">
+                    <NavLink 
+                        className="nav-link"
+                        aria-current="page"
+                        to="/admin" 
+                        >
+                            מנהל בלבד
+                    </NavLink>
+                </li>
                 
                 <li className="nav-item me-3">
                     <NavLink 
@@ -32,15 +46,7 @@ function Header() {
                             הספרים שלנו
                     </NavLink>
                 </li>
-                <li className="nav-item me-3">
-                    <NavLink 
-                        className="nav-link"
-                        aria-current="page"
-                        to="/admin" 
-                        >
-                            מנהל בלבד
-                    </NavLink>
-                </li>
+                
                 
                 <li className="nav-item me-3">
                     <NavLink                         
@@ -61,27 +67,39 @@ function Header() {
                             אודותינו
                     </NavLink>
                 </li>
-                <li className="nav-item me-3">
-                    <NavLink                         
-                        className="nav-link"
-                        aria-current="page"
-                        to="/signup"
-                        >
-                            הרשם כאן
-                    </NavLink>
-                </li>
-                <li className="nav-item me-3">
-                    <NavLink 
-                        className="nav-link"
-                        aria-current="page"
-                        to="/login"
-                        >
-                           התחבר
-                    </NavLink>
-                </li>
-                <li className="nav-item">
+                </ul>
+                <ul className="navbar-nav flex-row">
+                
+                {
+                    !isLoggedIn &&
+                    <>
+                        <li className="nav-item me-3">
+                            <NavLink                         
+                                className="nav-link"
+                                aria-current="page"
+                                to="/signup"
+                                >
+                                    הרשם כאן
+                            </NavLink>
+                        </li>
+                        <li className="nav-item me-3">
+                            <NavLink 
+                                className="nav-link"
+                                aria-current="page"
+                                to="/login"
+                                >
+                                התחבר
+                            </NavLink>
+                        </li>
+                    </>
+                }
+                {
+                    isLoggedIn &&
+                    <li className="nav-item">
                     <Logout />
-                </li>
+                    </li>
+                }
+                
             </ul>    
         </div>
     </nav>
