@@ -3,7 +3,7 @@ import { AppContext } from "../App";
 
 function User() {
     const context = useContext(AppContext);
-        if (!context) return <div>Eroor</div>
+        if (!context) return <div>שגיאה</div>
 
     return ( 
         <>
@@ -12,7 +12,7 @@ function User() {
                     null :
                     (
                         <div>
-                            Hello {context.userName}
+                            שלום - {context.userName}
                         </div>
                      )
              }   

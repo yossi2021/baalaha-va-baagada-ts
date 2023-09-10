@@ -18,8 +18,8 @@ function ButtonsBar({
     const categories = Object.values(Categories);
 
     return ( 
-        <div className="d-flex px-5 ">
-                <div>
+        <div className="d-flex px-5">
+                <div className="px-5">
                 <button className="btn btn-light mx-1"
                 onClick={() => updateDisplay('grid')}>
                     
@@ -31,13 +31,13 @@ function ButtonsBar({
                 </button>
                 </div>
 
-                <div className="d-flex alig-items-center">
-                    <label >קטגוריות הספרים</label>
+                <div className="d-flex aligמ-items-center text-center ms-5">
+                    <label className="me-5">קטגוריות הספרים</label>
                     
                     <select 
                     value={selectedCategory}
                     onChange={handleCategoryChange}
-                    className="form-select" 
+                    className="form-select text-center" 
                     >
                         {
                                 categories.map(category =>
@@ -55,7 +55,7 @@ function ButtonsBar({
                             value={search} 
                             onChange={(e) => handleSearch(e)}
                                 placeholder="חיפוש"
-                                className="form-select ms-3"
+                                className="form-select ms-3 text-center"
                             />
 
 

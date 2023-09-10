@@ -48,21 +48,21 @@ function HeaderForm( { addUser }: Props) {
      return ( 
         <>
         <div className="bg-light d-flex p-4 justify-content-between">
-            <h5>Useres</h5>
+            <h5>משתמש</h5>
             <div className="d-flex">
                 <input 
                     value={name}
                     onChange={(e)=> setName(e.target.value)}
                     className="form-control" 
                     type="text" 
-                    placeholder="full name" />
+                    placeholder="שם מלא" />
 
                     <input 
                     value={email}
                     onChange={(e)=> setEmail(e.target.value )}
                     className="form-control mx-3" 
                     type="text"  
-                    placeholder="Email"/>
+                    placeholder="כתובת מייל"/>
 
                     <select 
                     className="form-select"
@@ -83,7 +83,7 @@ function HeaderForm( { addUser }: Props) {
 
                 <button 
                 onClick ={handleClikcs}
-                className="btn btn-info ms-3">Add</button>
+                className="btn btn-info ms-3">הוסף</button>
             </div>
         </div>
 

@@ -63,11 +63,13 @@ function Books() {
 
     return ( 
             <BookContext.Provider value={{books , delBook}}>
-                <div className="text-center">books</div>
+                <div className="text-center">
+                    <h3 className="mt-5">
+                    כאן תוכל לבצע הזמנה לאיסוף עצמי</h3></div>
 
                 {
                 books.length === 0 &&
-                <div className="alert alert-info m-5">no orders yet</div>
+                <div className="alert alert-info m-5">עדיין לא בוצעו הזמנות</div>
                 }
 
             <Panel>
@@ -77,9 +79,9 @@ function Books() {
                     <table className="table table-hover">
                                 <thead>
                                     <tr>
-                                        <th className="w-25">Date</th>
-                                        <th className="w-25">Location</th>
-                                        <th className="w-50">Price</th>
+                                        <th className="w-25">תאריך איסוף</th>
+                                        <th className="w-25">אאסוף מהעיר...</th>
+                                        <th className="w-50">כמות הספרים שאקח</th>
                                         <th></th>
                                     </tr>
                                 </thead>
@@ -90,8 +92,19 @@ function Books() {
                 
                                 </tbody>
                             </table>
+                            
                     </Panel>
-                </BookContext.Provider>  
+                    <footer>
+        <div >
+          <p className="text-center text-white bg-secondary">
+        כל הזכויות שמורות ליוסף בללי בניית אתרים בע"מ
+          </p>
+        </div>
+    </footer>
+                    
+                </BookContext.Provider> 
+                
+                
         
      );
 }

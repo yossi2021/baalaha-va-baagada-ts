@@ -27,6 +27,15 @@ function Header() {
                             מנהל בלבד
                     </NavLink>
                 </li>
+                <li className="nav-item me-3">
+                    <NavLink                         
+                        className="nav-link"
+                        aria-current="page"
+                        to="/AboutUs"
+                        >
+                            אודותינו
+                    </NavLink>
+                </li>
                 
                 <li className="nav-item me-3">
                     <NavLink 
@@ -34,7 +43,7 @@ function Header() {
                         aria-current="page"
                         to="/Offers" 
                         >
-                            המבצעים שלנו
+                            הספרים שלנו
                     </NavLink>
                 </li>
                 <li className="nav-item me-3">
@@ -43,7 +52,7 @@ function Header() {
                         aria-current="page"
                         to="/books"
                         >
-                            הספרים שלנו
+                            ביצוע הזמנה לאיסוף
                     </NavLink>
                 </li>
                 
@@ -58,15 +67,7 @@ function Header() {
                         </NavLink>
                 </li>
 
-                <li className="nav-item me-3">
-                    <NavLink                         
-                        className="nav-link"
-                        aria-current="page"
-                        to="/AboutUs"
-                        >
-                            אודותינו
-                    </NavLink>
-                </li>
+                
                 </ul>
                 <ul className="navbar-nav flex-row">
                 

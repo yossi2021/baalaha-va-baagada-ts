@@ -37,9 +37,9 @@ interface Context {
 export const AppContext = createContext<Context | null>(null);
 
 export enum StatusEnum {
-  active ='active',
-  expired = 'expired',
-  banned ='banned'
+  active ="פעיל",
+  expired = "לא בתוקף",
+  banned ="לא במערכת"
 }
 
 function App() {
@@ -106,7 +106,8 @@ function App() {
       <Routes>
           <Route 
             path="/"
-            element={<><HeaderForm addUser={addUser} />
+            element={<><HeaderForm addUser={addUser} 
+            />
             {
         users.length === 0 &&
         <Message
@@ -114,7 +115,7 @@ function App() {
           showButton={false}
         >
           <div>
-            No users to display
+            אין משתמשים להצגה
           </div>
           </Message>
       }
@@ -123,9 +124,9 @@ function App() {
           user={newUser}
           showButton={true}
         >
-        New user: <span className='fw-bold'>
+        משתמש חדש: <span className='fw-bold'>
           {newUser?.name}
-        </span>, has been added succrssfully.
+        </span>, נוסף בהצלחה
         </Message>
       
         <Message
@@ -134,9 +135,9 @@ function App() {
           showButton={true}
         >
        
-        User <span className='fw-bold'>
+        משתמש <span className='fw-bold'>
           {deletedUser?.name}
-        </span>, has been deleted.
+        </span>, נמחק מהמערכת.
         </Message>
         <Table users={users} deleteUser={deleteUser}/>
         <Home />

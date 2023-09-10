@@ -3,25 +3,49 @@ export const data = [
     {
         id:1,
     name:"הלכות שבת" ,
-    price:10 ,
-    image:"	https://cdn.pixabay.com/photo/2023/06/20/20/31/flower-8077948_1280.jpg" ,
+    // price:10 ,
+    image:"	https://r-rdesign.co.il/wp-content/uploads/2023/09/shabatkatarfront-copy.jpg" ,
     description:"יהודי יקר כל שתרצה על מנת לשמור שבת" ,
     category: Categories.shabat  
     },
     {
         id:2,
     name:"חגים ומועדים",
-    price:10 ,
-    image:"	https://cdn.pixabay.com/photo/2023/06/15/12/26/lotus-8065281_1280.jpg" ,
+    // price:10 ,
+    image:"	https://r-rdesign.co.il/wp-content/uploads/2023/09/rushashanafront-copy.jpg" ,
     description:"יהודי יקר כל שתרצה על מנת לשמור חגים" ,
     category: Categories.hagim
     } ,
     {
         id:3,
     name:"סדר יום",
-    price:10 ,
-    image:"	https://cdn.pixabay.com/photo/2023/06/12/16/41/wild-bee-8058943_1280.jpg" ,
+    // price:10 ,
+    image:"	https://r-rdesign.co.il/wp-content/uploads/2023/09/sederyomfront-copy.jpg" ,
     description:"יהודי יקר כל שתרצה על מנת להתחיל את יומך" ,
     category: Categories.sederYom
+    },
+    {
+        id:4,
+    name:"הלכות לנשים" ,
+    // price:10 ,
+    image:"	https://r-rdesign.co.il/wp-content/uploads/2023/09/liyotatkatan-copy.jpg" ,
+    description:"יהודיה יקרה כל שתרצי בנוגע להלכות נשים" ,
+    category: Categories.nashim  
+    },
+    {
+        id:5,
+    name:"מוסר",
+    // price:10 ,
+    image:"https://r-rdesign.co.il/wp-content/uploads/2023/09/pirkeavotfront-copy.jpg" ,
+    description:"יהודי יקר כל שתרצה בנושא המוסר" ,
+    category: Categories.musar
+    } ,
+    {
+        id:6,
+    name:"שונות",
+    // price:10 ,
+    image:"https://r-rdesign.co.il/wp-content/uploads/2023/09/britmukafront-copy.jpg" ,
+    description:"יהודי יקר כאן יש את כל הנושאים הנוספים במהלך השנה" ,
+    category: Categories.shonot
     } 
 ];

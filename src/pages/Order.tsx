@@ -44,7 +44,7 @@ function Offers() {
         
         
         <main className="text-end p-5">
-            <h4 className="mb-3">כתובת למשלוח</h4>
+            <h5 className="mb-3">בדוק האם יש בעיר הזו ספרים , שלח בקשה ונחזיר לה תשובה בהקדם על זמינות הספרים בעיר המבוקשת</h5>
             <form 
                 onSubmit={handleSubmit}
                 className="needs-validation"
@@ -52,7 +52,7 @@ function Offers() {
                 <div className="row g-3">
                     <div className="col-12">
                         <label className="form-label">
-                            Vacation Package
+                            הספר שאני רוצה
                             </label>
                         <select
                         name="vacation" 
@@ -60,7 +60,7 @@ function Offers() {
                         value={vacation}
                         onChange={(e) => setVacation(e.target.value)}                       
                         >
-                            <option value="">please select...</option>
+                            <option value="">...בחר בבקשה</option>
 
                         {
 
@@ -77,7 +77,7 @@ function Offers() {
                     </div>
                             <div className="col-12">
                                 <label className="form-label">
-                                    Name
+                                    שם
                                 </label>
                                 <input 
                                 type ="text"
@@ -89,8 +89,8 @@ function Offers() {
                             </div>
                             <div className="col-12">
                                 <label className="form-label">
-                                    Email
-                                    <span className="text-muted">(Optional)</span>
+                                    כתובת מייל
+                                    <span className="text-muted">(חובה)</span>
                                     </label>
                                     
                                 <input 
@@ -130,6 +130,14 @@ function Offers() {
                     </div>
             </form>
         </main>
+
+        <footer>
+        <div >
+          <p className="text-center text-white bg-secondary">
+        כל הזכויות שמורות ליוסף בללי בניית אתרים בע"מ
+          </p>
+        </div>
+    </footer>
 
                                 </>
             );

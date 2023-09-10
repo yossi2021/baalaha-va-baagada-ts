@@ -18,9 +18,9 @@ function Table({users,deleteUser}: Props) {
         <table className=" table table-hover">
             <thead>
                 <tr>
-                    <th className="w-25">Full name </th>
-                    <th className="w-25">Status</th>
-                    <th className="w-50">Email </th>
+                    <th className="w-25">שם מלא </th>
+                    <th className="w-25">סטאטוס</th>
+                    <th className="w-50">כתובת מייל</th>
                     <th></th>
                 </tr>
             </thead>

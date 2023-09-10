@@ -61,38 +61,38 @@ function AddForm({ addBooks }: Props ) {
 
     return ( 
         <>
-        <div className="bg-light d-flex p-4 align-items-center">
+        
+        <div className="bg-light d-flex p-4 align-items-center ">
+        <button onClick={handleClick}
+          className="btn btn-info ms-3"
+          >
+            הוסף
+          </button>
+          
         <input 
         value={date}
         onChange={(e) => setDate(e.target.value)}
-        className="form-control me-3"
+        className="form-control me-3 text-center"
          type="text"
-         placeholder="Date"
+         placeholder="תאריך איסוף"
           />
         <input 
         value={location}
         onChange={(e) => setLocation(e.target.value)}
-        className="form-control me-3"
+        className="form-control me-3 text-center"
          type="text"
-         placeholder="location"
+         placeholder="הזן עיר"
           />
         <input 
         value={price}
         onChange={(e) => setPrice(+e.target.value)}
-        className="form-control me-3"
+        className="form-control me-3 text-center"
          type="number"
-         placeholder="Price"
+         placeholder="כמות הספרים"
           />
         
-
-          <button onClick={handleClick}
-          className="btn btn-info ms-3"
-          >
-            add
-          </button>
-
-
     </div>
+    
 
     
     {

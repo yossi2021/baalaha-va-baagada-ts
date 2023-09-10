@@ -64,7 +64,12 @@ function Home() {
 
     return ( 
         <>
-        <Title content="אתר בהלכה ובאגדה"/>
+        <div className="carousel-inner">
+        <div className="carousel-item active">
+        <img src="https://r-rdesign.co.il/wp-content/uploads/2023/09/dati2.jpg" className="d-block w-100 " alt="תמונת דתיים"/>
+        </div>
+        </div>
+        {/* <Title content="אתר בהלכה ובאגדה"/> */}
             <ButtonsBar
             updateDisplay={setDisplay}
             selectedCategory={selectedCategory}
@@ -96,6 +101,13 @@ function Home() {
                 </div>
                 )
             }
+            <footer>
+        <div >
+          <p className="text-center text-white bg-secondary">
+        כל הזכויות שמורות ליוסף בללי בניית אתרים בע"מ
+          </p>
+        </div>
+    </footer>
                 </>
      );
 }

@@ -7,11 +7,11 @@ interface Props{
 function Status({type}: Props) {
     function getBadgeCss(){
         switch (type) {
-            case 'active':
+            case 'פעיל':
                 return 'bg-success';
-                case 'expired':
+                case 'לא בתוקף':
                 return 'bg-warning';
-                case 'banned':
+                case 'לא במערכת':
                     return 'bg-secodary';
                 
             default:

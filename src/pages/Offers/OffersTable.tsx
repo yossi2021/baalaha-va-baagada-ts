@@ -62,17 +62,17 @@ function OffersTable() {
                     value={search}
                     onChange={(e)=> handleSearch(e.target.value)}
                     type="text"
-                    placeholder="Search"
+                    placeholder="חיפוש עיר"
                     className="form-control me-4" 
                     />
                 
                 <select 
-                    className="form-select"
+                    className="form-select me-3"
                     value={sort}
                     onChange={(e)=> handleSort(e.target.value)}
                     >
-                    <option value={SortDirection.asc}>Location a-z</option>
-                    <option value={SortDirection.desc}>Location z-a</option>
+                    <option value={SortDirection.asc}>סדר עולה</option>
+                    <option value={SortDirection.desc}>סדר יורד</option>
                 </select>
             </div>
             {
@@ -87,9 +87,9 @@ function OffersTable() {
                     <table className="table table-hover">
                         <thead>
                             <tr>
-                                <th className="w-25">Date</th>
-                                <th className="w-25">Location</th>
-                                <th className="w-50">Price</th>
+                                <th className="w-25 " >תאריך</th>
+                                <th className="w-25  ">שם העיר</th>
+                                <th className="w-25 ">המחיר</th>
                             </tr>
                         </thead>
                         <tbody>
