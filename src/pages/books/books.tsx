@@ -65,7 +65,7 @@ function Books() {
             <BookContext.Provider value={{books , delBook}}>
                 <div className="text-center">
                     <h3 className="mt-5">
-                    כאן תוכל לבצע הזמנה לאיסוף עצמי</h3></div>
+                    כאן תוכל לבדוק את ההזמנות שבוצעו</h3></div>
 
                 {
                 books.length === 0 &&
@@ -79,9 +79,9 @@ function Books() {
                     <table className="table table-hover">
                                 <thead>
                                     <tr>
-                                        <th className="w-25">תאריך איסוף</th>
-                                        <th className="w-25">אאסוף מהעיר...</th>
-                                        <th className="w-50">כמות הספרים שאקח</th>
+                                        <th className="w-25">תאריך הזמנות קודמות</th>
+                                        <th className="w-25">נרכש בעיר</th>
+                                        <th className="w-50">מחיר הספרים</th>
                                         <th></th>
                                     </tr>
                                 </thead>

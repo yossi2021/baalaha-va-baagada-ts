@@ -52,7 +52,7 @@ function Header() {
                         aria-current="page"
                         to="/books"
                         >
-                            ביצוע הזמנה לאיסוף
+                            הזמנות שבוצעו
                     </NavLink>
                 </li>
                 
@@ -63,7 +63,7 @@ function Header() {
                         aria-current="page"
                         to="/Order"
                         >
-                            לאן לשלוח
+                            צור קשר להזמנה
                         </NavLink>
                 </li>
 

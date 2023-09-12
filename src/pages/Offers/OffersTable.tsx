@@ -89,7 +89,7 @@ function OffersTable() {
                             <tr>
                                 <th className="w-25 " >תאריך</th>
                                 <th className="w-25  ">שם העיר</th>
-                                <th className="w-25 ">המחיר</th>
+                                <th className="w-25 ">המחיר המעודכן לספר</th>
                             </tr>
                         </thead>
                         <tbody>

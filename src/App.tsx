@@ -104,7 +104,7 @@ function App() {
       
       
       <Routes>
-          <Route 
+          {/* <Route 
             path="/"
             element={<><HeaderForm addUser={addUser} 
             />
@@ -143,9 +143,13 @@ function App() {
         <Home />
             </>}
             
-            />
+            /> */}
             
       
+          <Route 
+            path='/'
+            element={<Home />}
+            />
           <Route 
             path='/AboutUs'
             element={<AboutUs />}

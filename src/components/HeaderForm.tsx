@@ -62,7 +62,7 @@ function HeaderForm( { addUser }: Props) {
                     onChange={(e)=> setEmail(e.target.value )}
                     className="form-control mx-3" 
                     type="text"  
-                    placeholder="כתובת מייל"/>
+                    placeholder="אי-מייל"/>
 
                     <select 
                     className="form-select"

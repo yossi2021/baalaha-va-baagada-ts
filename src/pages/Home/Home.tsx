@@ -69,7 +69,18 @@ function Home() {
         <img src="https://r-rdesign.co.il/wp-content/uploads/2023/09/dati2.jpg" className="d-block w-100 " alt="תמונת דתיים"/>
         </div>
         </div>
-        {/* <Title content="אתר בהלכה ובאגדה"/> */}
+        <Title content="פתח דבר לשאר ההלכה"/>
+        <p className="text-center">
+        סדרת הספרים שלפניכם מונגשת לכולם, 
+
+        לעיתים כשמגיעים ללמוד הלכות יש קושי מסויים מפאת קושי ההבנה של המושגים החדשים או מפאת קושי הלשון והסגנון.
+        <p>
+        </p>ולכן כאן אנו מביאים בעיקר את ההלכות האקטואליות שנוגעות ממש ליום יום לכל רגע ורגע 
+        אם זה בשמירת השבת, החגים, טהרה, כשרות, ברכות, וכל מה שהיהודי היקר צריך לסדר יומו
+        </p>
+        <h3 className="text-center">חשוב להבין ולדעת </h3>
+        <p className="text-center"><b> לתועלת הלומדים: ההלכות שבחוברת הינם לבני ספרד ולבני אשכנז
+          ורק שיש חילוקי דינים בין מרן השולחן ערוך לרמ"א צויינו חילוקי דינים אלו.</b></p>
             <ButtonsBar
             updateDisplay={setDisplay}
             selectedCategory={selectedCategory}

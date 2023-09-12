@@ -74,7 +74,7 @@ function AddForm({ addBooks }: Props ) {
         onChange={(e) => setDate(e.target.value)}
         className="form-control me-3 text-center"
          type="text"
-         placeholder="תאריך איסוף"
+         placeholder="תאריך"
           />
         <input 
         value={location}

@@ -5,13 +5,13 @@ function AdminOnly() {
     if (admin === "true") {
         return (
             <h2 className="text-center">
-                You've reached the Administrator page
+                הגעת לדף שמורשה רק למנהל
             </h2>
         )
     } 
     return ( 
-        <div className="text-danger">
-            Forbidden
+        <div className="text-danger text-center">
+            <h2 > אין גישה  </h2>
         </div>
      );
 }

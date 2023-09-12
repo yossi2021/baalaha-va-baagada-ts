@@ -44,7 +44,19 @@ function Offers() {
         
         
         <main className="text-end p-5">
-            <h5 className="mb-3">בדוק האם יש בעיר הזו ספרים , שלח בקשה ונחזיר לה תשובה בהקדם על זמינות הספרים בעיר המבוקשת</h5>
+            <h3 className="mb-3">בדוק האם יש בעיר הזו ספרים</h3>
+            <h5>
+            שלח בקשתך אלינו
+            </h5>
+            ונחזיר לך תשובה בהקדם על זמינות הספרים בעיר המבוקשת
+            <p>
+                
+            </p>
+            <p className="text-center">
+            משלוח עד הבית בעלות 60 ₪ במייל:
+            <a href="mailto:6410995@gmail.com" className="text-black">6410995@gmail.com</a>
+            </p>
+
             <form 
                 onSubmit={handleSubmit}
                 className="needs-validation"
@@ -52,7 +64,7 @@ function Offers() {
                 <div className="row g-3">
                     <div className="col-12">
                         <label className="form-label">
-                            הספר שאני רוצה
+                            האם יש בעיר...
                             </label>
                         <select
                         name="vacation" 
@@ -130,6 +142,8 @@ function Offers() {
                     </div>
             </form>
         </main>
+
+        
 
         <footer>
         <div >
