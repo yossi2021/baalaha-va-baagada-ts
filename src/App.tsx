@@ -104,6 +104,8 @@ function App() {
       
       
       <Routes>
+        {/* this is only for the deleteuser and adduser functions */}
+        
           {/* <Route 
             path="/"
             element={<><HeaderForm addUser={addUser} 

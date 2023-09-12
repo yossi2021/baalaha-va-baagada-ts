@@ -65,7 +65,8 @@ function Books() {
             <BookContext.Provider value={{books , delBook}}>
                 <div className="text-center">
                     <h3 className="mt-5">
-                    כאן תוכל לבדוק את ההזמנות שבוצעו</h3></div>
+                     כאן תוכל להיות במעקב אחר הזמנות שבוצעו עד כה</h3>
+                </div>
 
                 {
                 books.length === 0 &&
@@ -81,7 +82,7 @@ function Books() {
                                     <tr>
                                         <th className="w-25">תאריך הזמנות קודמות</th>
                                         <th className="w-25">נרכש בעיר</th>
-                                        <th className="w-50">מחיר הספרים</th>
+                                        <th className="w-50">המחיר ששולם</th>
                                         <th></th>
                                     </tr>
                                 </thead>

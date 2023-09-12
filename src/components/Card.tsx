@@ -41,7 +41,7 @@ function Card({
           href='/offers' 
           className="btn btn-primary d-flex "
         >
-          לצפייה בספרים
+          עבור לעמוד ספרים ומבצעים
           </a>
         </div>
       </div>
