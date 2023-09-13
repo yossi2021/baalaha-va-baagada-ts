@@ -79,7 +79,7 @@ function Edit() {
             <label 
                 htmlFor="date" 
                 className="form-label">
-                    Date
+                    תאריך
             </label>
             <div>
                 {formatDate(date)}
@@ -90,7 +90,7 @@ function Edit() {
         <div className="bg-light m-4">
         <label  
                 className="form-label">
-                Location
+                עיר
             </label>
 
         <input 
@@ -98,7 +98,7 @@ function Edit() {
         onChange={(e) => setLocation(e.target.value)}
         className="form-control me-3"
          type="text"
-         placeholder="location"
+         placeholder="עיר"
           />
 
         </div>
@@ -106,28 +106,28 @@ function Edit() {
         <div className="bg-light m-4">
         <label  
                 className="form-label">
-                Price
+                כמות
             </label>
         <input 
         value={price}
         onChange={(e) => setPrice(+e.target.value)}
         className="form-control me-3"
          type="number"
-         placeholder="Price"
+         placeholder="כמות"
           />
           </div>
         
           <button onClick={handleClick}
           className="btn btn-info ms-3"
           >
-            Update
+            עדכן
           </button>
           
           <Link 
           to="/books"
           className="btn btn-secondary"
           >
-            Cancel
+            בטל
           </Link>
     </div>
 

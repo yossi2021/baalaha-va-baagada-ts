@@ -1,5 +1,5 @@
 export function formatPrice(value: number): string{
-    return `$${value}`;
+    return `${value}`;
 }
 
 export function formatDate(value: string): string {
