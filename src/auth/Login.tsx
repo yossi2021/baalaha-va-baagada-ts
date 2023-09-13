@@ -41,14 +41,14 @@ function Login({handler} : Props) {
         <>
         <div className="p-3 form-max-w m-auto" >
             <Title
-                content="Login"
+                content="התחבר"
             />
             
             <div className="mb-3">
                 <input 
                 type="email" 
                 className="form-control"
-                placeholder="Email"
+                placeholder="כתובת מייל"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 />
@@ -58,7 +58,7 @@ function Login({handler} : Props) {
                 <input 
                 type="password" 
                 className="form-control"
-                placeholder="Password"
+                placeholder="סיסמא"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 />
@@ -69,7 +69,7 @@ function Login({handler} : Props) {
             onClick={submit}
             className="btn btn-primary btn-lg">
 
-                Login
+                התחבר
             </button>
         </div>
         </>

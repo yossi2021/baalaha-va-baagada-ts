@@ -3,7 +3,7 @@ import { AppContext } from "../App";
 
 function  Logout() {
         const context = useContext(AppContext);
-        if (!context) return <div>Eroor</div>
+        if (!context) return <div>שגיאה</div>
 
     return ( 
             <button 

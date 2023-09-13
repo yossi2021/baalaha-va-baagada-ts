@@ -66,13 +66,13 @@ function Signup() {
         <>
         <div className="p-3 form-max-w m-auto" >
             <Title
-                content="sign Up"
+                content="הרשמה"
             />
             <div className="mb-3">
                 <input 
                 type="text" 
                 className="form-control"
-                placeholder="Name"
+                placeholder="שם מלא"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
                 />
@@ -82,7 +82,7 @@ function Signup() {
                 <input 
                 type="email" 
                 className="form-control"
-                placeholder="Email"
+                placeholder="כתובת מייל"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 />
@@ -91,7 +91,7 @@ function Signup() {
                 <input 
                 type="password" 
                 className="form-control"
-                placeholder="Password"
+                placeholder="סיסמא"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 />
@@ -101,7 +101,7 @@ function Signup() {
             onClick={submit}
             className="btn btn-primary btn-lg">
 
-                Sign Up
+                שלח
             </button>
         </div>
         </>

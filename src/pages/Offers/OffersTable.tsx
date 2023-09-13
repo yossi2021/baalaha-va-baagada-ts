@@ -57,7 +57,7 @@ function OffersTable() {
                 
             </small>
         </h2>
-        <div className="d-flex px-4 w-50 my-5 bg-light">
+        <div className="d-flex px-4 my-5 bg-light">
                 <input
                     value={search}
                     onChange={(e)=> handleSearch(e.target.value)}

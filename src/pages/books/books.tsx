@@ -3,6 +3,7 @@ import AddForm from "./AddForm";
 import { deleteRequest, getRequest } from "../../services/apiService";
 import Panel from "../../components/Panel";
 import TableRows from "./TableRows";
+import Title from "../../components/Title";
 ;
 
 export interface IBooks {
@@ -64,8 +65,13 @@ function Books() {
     return ( 
             <BookContext.Provider value={{books , delBook}}>
                 <div className="text-center">
-                    <h3 className="mt-5">
-                     כאן תוכל להיות במעקב אחר הזמנות שבוצעו עד כה</h3>
+                    <Title 
+                    content=" הזמנות באיסוף עצמי"
+                    />
+                    <h6 className="mt-5">
+                     כאן תוכל לעקוב אחר ההזמנות שלך ולעדכן מאיזה עיר וכמה ספרים תרצה לאסוף</h6>
+                    <h6 className="mt-5">
+                     בנוסף תוכל לערוך ולמחוק הזמנה</h6>
                 </div>
 
                 {
@@ -80,9 +86,9 @@ function Books() {
                     <table className="table table-hover">
                                 <thead>
                                     <tr>
-                                        <th className="w-25">תאריך הזמנות קודמות</th>
-                                        <th className="w-25">נרכש בעיר</th>
-                                        <th className="w-50">המחיר ששולם</th>
+                                        <th className="w-25">תאריך הזמנות</th>
+                                        <th className="w-25">עיר לאיסוף</th>
+                                        <th className="w-50">כמות הספרים שארצה</th>
                                         <th></th>
                                     </tr>
                                 </thead>
