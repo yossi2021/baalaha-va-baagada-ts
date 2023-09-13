@@ -4,6 +4,7 @@ import { deleteRequest, getRequest } from "../../services/apiService";
 import Panel from "../../components/Panel";
 import TableRows from "./TableRows";
 import Title from "../../components/Title";
+import Footer from "../../components/Footer";
 ;
 
 export interface IBooks {
@@ -101,13 +102,7 @@ function Books() {
                             </table>
                             
                     </Panel>
-                    <footer>
-        <div >
-          <p className="text-center text-white bg-secondary">
-        כל הזכויות שמורות ליוסף בללי בניית אתרים בע"מ
-          </p>
-        </div>
-    </footer>
+                    <Footer/>
                     
                 </BookContext.Provider> 
                 

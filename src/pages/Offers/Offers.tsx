@@ -1,3 +1,4 @@
+import Footer from "../../components/Footer";
 import Title from "../../components/Title";
 import OffersTable from "./OffersTable";
 
@@ -44,13 +45,7 @@ function Order() {
 
         <OffersTable />
 
-        <footer>
-        <div >
-          <p className="text-center text-white bg-secondary">
-        כל הזכויות שמורות ליוסף בללי בניית אתרים בע"מ
-          </p>
-        </div>
-    </footer>
+        <Footer/>
         
             </>
     );

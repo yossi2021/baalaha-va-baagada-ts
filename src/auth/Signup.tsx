@@ -4,6 +4,7 @@ import Joi from "joi";
 import { useNavigate } from "react-router-dom";
 import { postRequest } from "../services/apiService";
 import { toast } from "react-toastify";
+import Footer from "../components/Footer";
 
 
 interface ISignupData{
@@ -104,6 +105,7 @@ function Signup() {
                 שלח
             </button>
         </div>
+        <Footer/>
         </>
      );
 }

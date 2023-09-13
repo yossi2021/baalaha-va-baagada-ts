@@ -5,6 +5,7 @@ import './Home.css';
 import { data } from "./data";
 import { CardType, Categories } from "./types";
 import ButtonsBar from "../../components/ButtonsBar";
+import Footer from "../../components/Footer";
 
 
 
@@ -112,13 +113,7 @@ function Home() {
                 </div>
                 )
             }
-            <footer>
-        <div >
-          <p className="text-center text-white bg-secondary">
-        כל הזכויות שמורות ליוסף בללי בניית אתרים בע"מ
-          </p>
-        </div>
-    </footer>
+            <Footer/>
                 </>
      );
 }

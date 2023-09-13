@@ -1,3 +1,5 @@
+import Footer from "../components/Footer";
+
 function  AboutUs() {
     return ( 
         
@@ -63,15 +65,10 @@ function  AboutUs() {
                     </div>
 
                 </div>
-                <footer>
-                    <div>
-                        <p className="text-center text-white bg-secondary">
-                            כל הזכויות שמורות ליוסף בללי בניית אתרים בע"מ
-                        </p>
-                    </div>
-                </footer>
-</div>
-</>
+                
+                </div>
+                <Footer/>
+                </>
                 );
                 
                 }

@@ -1,3 +1,5 @@
+import Footer from "../components/Footer";
+
 function AdminOnly() {
     
     const admin = localStorage.getItem('admin')
@@ -11,13 +13,17 @@ function AdminOnly() {
             <h5 className="text-center">
                 מנהל יקר התחברת בהצלחה 
             </h5>
+            
             </>
         )
     } 
     return ( 
+        <>
         <div className="text-danger text-center">
             <h2 > אין גישה  </h2>
         </div>
+        <Footer/>
+        </>
         
      );
 }

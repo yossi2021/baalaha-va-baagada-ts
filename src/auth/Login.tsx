@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Title from "../components/Title";
 import Joi from "joi";
+import Footer from "../components/Footer";
 
 
 
@@ -72,6 +73,7 @@ function Login({handler} : Props) {
                 התחבר
             </button>
         </div>
+        <Footer/>
         </>
      );
 }

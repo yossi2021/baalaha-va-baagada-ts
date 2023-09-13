@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Offer, dataOffers } from "../dataOffers/offers";
 import Joi from "joi";
 import { toast } from "react-toastify";
+import Footer from "../components/Footer";
 
 function Offers() {
     const [vacation , setVacation] = useState<string>('');
@@ -145,13 +146,7 @@ function Offers() {
 
         
 
-        <footer>
-        <div >
-          <p className="text-center text-white bg-secondary">
-        כל הזכויות שמורות ליוסף בללי בניית אתרים בע"מ
-          </p>
-        </div>
-    </footer>
+        <Footer/>
 
                                 </>
             );

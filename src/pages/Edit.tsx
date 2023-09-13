@@ -4,6 +4,7 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { IBooks } from "./Books/Books";
 import { getRequest, patchRequest } from "../services/apiService";
 import { formatDate } from "../utlis/utlis";
+import Footer from "../components/Footer";
 
 function Edit() {
     const navigate = useNavigate();
@@ -137,6 +138,8 @@ function Edit() {
                 {error}
             </div>
           }
+
+<Footer/>
 </>
 
 
