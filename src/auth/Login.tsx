@@ -73,7 +73,9 @@ function Login({handler} : Props) {
                 התחבר
             </button>
         </div>
+        <div className="fixed-bottom">
         <Footer/>
+        </div>
         </>
      );
 }

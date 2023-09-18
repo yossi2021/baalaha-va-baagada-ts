@@ -22,7 +22,9 @@ function AdminOnly() {
         <div className="text-danger text-center">
             <h2 > אין גישה  </h2>
         </div>
+        <div className="fixed-bottom">
         <Footer/>
+        </div>
         </>
         
      );
