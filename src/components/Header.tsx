@@ -9,11 +9,11 @@ function Header() {
     const isLoggedIn = context && context.userName.length> 0;
 
     return ( 
-        <header>
+        <header className="sticky-sm-top">
     <nav className="navbar navbar-dark bg-dark ">
         <div className="container-fluid">
             <a className="navbar-brand " href="/">
-                <i className="bi-book me-2"></i>
+                <i className="bi-book me-2"> </i>
                     בהלכה ובאגדה
             </a>
             
@@ -52,7 +52,7 @@ function Header() {
                         aria-current="page"
                         to="/books"
                         >
-                            ההזמנות שלי
+                            הזמנות ספרים
                     </NavLink>
                 </li>
                 
