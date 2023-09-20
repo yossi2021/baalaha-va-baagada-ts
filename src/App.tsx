@@ -165,7 +165,7 @@ function App() {
             element={<Offers  />}
             />
           <Route 
-            path='/Books'
+            path='/books'
             element={
               <RouetGuard>
                 <Books />
