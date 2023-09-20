@@ -10,10 +10,6 @@ import Footer from "../../components/Footer";
 
 
 function Home() {
-    
-
-    
-
     const [display, setDisplay]= useState('grid');
     const [selectedCategory ,setSelectedCategory] = useState(Categories.all);
     const [filtered , setFiltered]= useState([...data]);
@@ -75,8 +71,8 @@ function Home() {
         סדרת הספרים שלפניכם מונגשת לכולם, 
 
         לעיתים כשמגיעים ללמוד הלכות יש קושי מסויים מפאת קושי ההבנה של המושגים החדשים או מפאת קושי הלשון והסגנון.
-        <p>
-        </p>ולכן כאן אנו מביאים בעיקר את ההלכות האקטואליות שנוגעות ממש ליום יום לכל רגע ורגע 
+        
+        ולכן כאן אנו מביאים בעיקר את ההלכות האקטואליות שנוגעות ממש ליום יום לכל רגע ורגע 
         אם זה בשמירת השבת, החגים, טהרה, כשרות, ברכות, וכל מה שהיהודי היקר צריך לסדר יומו
         </p>
         <h3 className="text-center">חשוב להבין ולדעת </h3>

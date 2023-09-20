@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { AppContext } from "../App";
-import Footer from "../components/Footer";
+
 
 function  Logout() {
         const context = useContext(AppContext);
@@ -14,7 +14,7 @@ function  Logout() {
             >
                  התנתק
             </button>
-            <Footer/>
+            
             </>
      );
 }
