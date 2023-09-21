@@ -61,6 +61,9 @@ function Signup() {
                 navigate('/login');
             
         })
+
+        toast.success('הרשמתך בוצעה בהצלחה');
+
 }
 
     return ( 

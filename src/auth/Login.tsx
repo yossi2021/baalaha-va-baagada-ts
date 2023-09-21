@@ -2,6 +2,7 @@ import { useState } from "react";
 import Title from "../components/Title";
 import Joi from "joi";
 import Footer from "../components/Footer";
+import { toast } from "react-toastify";
 
 
 
@@ -34,6 +35,8 @@ function Login({handler} : Props) {
             return;
         }
         handler(value);
+
+        toast.success('התחברות בוצעה בהצלחה');
     }
 
     
