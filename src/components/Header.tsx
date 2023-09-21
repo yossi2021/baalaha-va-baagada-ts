@@ -18,15 +18,7 @@ function Header() {
             </a>
             
             <ul className="navbar-nav flex-row">
-                <li className="nav-item me-3">
-                    <NavLink 
-                        className="nav-link"
-                        aria-current="page"
-                        to="/admin" 
-                        >
-                            מנהל בלבד
-                    </NavLink>
-                </li>
+                
                 <li className="nav-item me-3">
                     <NavLink                         
                         className="nav-link"
@@ -52,7 +44,7 @@ function Header() {
                         aria-current="page"
                         to="/books"
                         >
-                            הזמנות ספרים
+                            הזמנות
                     </NavLink>
                 </li>
                 
@@ -63,7 +55,7 @@ function Header() {
                         aria-current="page"
                         to="/Order"
                         >
-                            צור קשר להזמנה
+                        צור קשר
                         </NavLink>
                 </li>
 
@@ -92,6 +84,15 @@ function Header() {
                                 התחבר
                             </NavLink>
                         </li>
+                        <li className="nav-item me-3">
+                    <NavLink 
+                        className="nav-link"
+                        aria-current="page"
+                        to="/admin" 
+                        >
+                            מנהל בלבד
+                    </NavLink>
+                </li>
                     </>
                 }
                 {

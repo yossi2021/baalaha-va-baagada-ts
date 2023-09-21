@@ -153,7 +153,7 @@ function App() {
             element={<Home />}
             />
           <Route 
-            path='/AboutUs'
+            path='/aboutUs'
             element={<AboutUs />}
             />
           <Route 
