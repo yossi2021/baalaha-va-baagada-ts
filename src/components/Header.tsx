@@ -72,7 +72,7 @@ function Header() {
                                 aria-current="page"
                                 to="/signup"
                                 >
-                                    הרשם כאן
+                                    הרשמה
                             </NavLink>
                         </li>
                         <li className="nav-item me-3">
