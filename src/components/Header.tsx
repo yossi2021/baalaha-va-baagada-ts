@@ -9,6 +9,7 @@ function Header() {
     const isLoggedIn = context && context.userName.length> 0;
 
     return ( 
+        <>
         <header className="sticky-sm-top">
     <nav className="navbar navbar-dark bg-dark ">
         <div className="container-fluid">
@@ -106,9 +107,10 @@ function Header() {
         </div>
     </nav>
     
-        <User />
+        
     </header>
-
+    <User />
+</>
     
      );
 }
