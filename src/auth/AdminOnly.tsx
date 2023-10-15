@@ -13,7 +13,9 @@ function AdminOnly() {
             <h5 className="text-center">
                 מנהל יקר התחברת בהצלחה 
             </h5>
-            
+            <div className="fixed-bottom">
+        <Footer/>
+        </div>
             </>
         )
     } 
