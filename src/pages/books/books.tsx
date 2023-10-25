@@ -5,6 +5,7 @@ import Panel from "../../components/Panel";
 import TableRows from "./TableRows";
 import Title from "../../components/Title";
 import Footer from "../../components/Footer";
+import BigPic from "../../components/BigPic";
 ;
 
 export interface IBooks {
@@ -64,7 +65,9 @@ function Books() {
 
 
     return ( 
+        
             <BookContext.Provider value={{books , delBook}}>
+                <BigPic/>
                 <div className="text-center">
                     <Title 
                     content=" הזמנות באיסוף עצמי"

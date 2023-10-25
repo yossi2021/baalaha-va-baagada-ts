@@ -3,6 +3,7 @@ import { Offer, dataOffers } from "../dataOffers/offers";
 import Joi from "joi";
 import { toast } from "react-toastify";
 import Footer from "../components/Footer";
+import BigPic from "../components/BigPic";
 
 function Offers() {
     const [vacation , setVacation] = useState<string>('');
@@ -43,7 +44,7 @@ function Offers() {
     return ( 
         <>
         
-        
+        <BigPic/>
         <main className="text-end p-5">
             <h3 className="mb-3">בדוק האם יש בעיר הזו ספרים</h3>
             <h5>

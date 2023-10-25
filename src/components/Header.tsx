@@ -11,15 +11,29 @@ function Header() {
     return ( 
         <>
         <header className="sticky-sm-top">
-    <nav className="navbar navbar-dark bg-dark ">
-        <div className="container-fluid">
-            <a className="navbar-brand " href="/">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark ">
+        <div className="display-grid ">
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            {/* <a className="navbar-brand " href="./">
                 <i className="bi-book me-2"> </i>
                     בהלכה ובאגדה
-            </a>
+            </a> */}
             
-            <ul className="navbar-nav flex-row">
-                
+            <div className="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center ">
+                <li className="nav-item me-3">
+                    <NavLink                         
+                        className="nav-link"
+                        aria-current="page"
+                        to="/"
+                        >
+                            <i className="bi-book me-2"> </i>
+                            דף הבית
+                    </NavLink>
+                    
+                </li>
                 <li className="nav-item me-3">
                     <NavLink                         
                         className="nav-link"
@@ -43,7 +57,7 @@ function Header() {
                     <NavLink  
                         className="nav-link"
                         aria-current="page"
-                        to="/books"
+                        to="/Books"
                         >
                             הזמנות
                     </NavLink>
@@ -94,22 +108,28 @@ function Header() {
                             מנהל בלבד
                     </NavLink>
                 </li>
+                
                     </>
                 }
                 {
                     isLoggedIn &&
                     <li className="nav-item">
                     <Logout />
+                    
                     </li>
                 }
-                
-            </ul>    
+                 
+            </ul>
+            
+            </div> 
+             
         </div>
+        <User/>
     </nav>
     
         
     </header>
-    <User />
+    
 </>
     
      );

@@ -6,6 +6,8 @@ import { data } from "./data";
 import { CardType, Categories } from "./types";
 import ButtonsBar from "../../components/ButtonsBar";
 import Footer from "../../components/Footer";
+import User from "../../components/User";
+import BigPic from "../../components/BigPic";
 
 
 
@@ -61,11 +63,8 @@ function Home() {
 
     return ( 
         <>
-        <div className="carousel-inner">
-        <div className="carousel-item active">
-        <img src="https://r-rdesign.co.il/wp-content/uploads/2023/09/dati2.jpg" className="d-block w-100 " alt="תמונת דתיים"/>
-        </div>
-        </div>
+        
+        <BigPic/>
         <Title content="פתח דבר לשאר ההלכה"/>
         <p className="text-center">
         סדרת הספרים שלפניכם מונגשת לכולם, 

@@ -10,10 +10,10 @@ function User() {
             {
                 (context.userName.length === 0) ?
                     null :
-                    (
-                        <div>
-                            שלום - {context.userName}
-                        </div>
+                    ( 
+                        <span className=" text-light bg-primary px-2 rounded-pill p-1">
+                            שלום רב- {context.userName}
+                        </span>
                      )
              }   
         </>           

@@ -1,13 +1,12 @@
+import BigPic from "../components/BigPic";
 import Footer from "../components/Footer";
 
 function  AboutUs() {
     return ( 
         
-        <><div className="carousel-inner">
-            <div className="carousel-item active">
-                <img src="https://r-rdesign.co.il/wp-content/uploads/2023/09/dati2.jpg" className="d-block w-100 " alt="תמונת דתיים" />
-            </div>
-        </div><div className="align-items-center card-body p-3">
+        <>
+        <BigPic/>
+        <div className="align-items-center card-body p-3">
                 <div className=" text-writh ">
                     <h1 className="me-2">  אודות ספרי בהלכה ובאגדה ומה מטרתם
                     </h1>

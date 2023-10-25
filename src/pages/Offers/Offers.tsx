@@ -1,3 +1,4 @@
+import BigPic from "../../components/BigPic";
 import Footer from "../../components/Footer";
 import Title from "../../components/Title";
 import OffersTable from "./OffersTable";
@@ -8,6 +9,7 @@ import OffersTable from "./OffersTable";
 function Order() {
     return (  
         <>
+        <BigPic/>
         <Title
         content=" הספרים והמבצעים שלנו"
         />
@@ -24,7 +26,7 @@ function Order() {
         </div>
 
         {/* <OffersTable /> */}
-
+        <div className="grid p-5">
         <div className="row  row-cols-1 row-cols-md-2  g-4 text-center rounded-2 ms-auto p-1 row-cols-sm-2 row-cols-lg-3  ">
             <img src="https://r-rdesign.co.il/wp-content/uploads/2023/09/sukotfront-copy.jpg" alt="סוכות" className="card1"/>
             <img src="https://r-rdesign.co.il/wp-content/uploads/2023/09/mitzvataaratzfront-copy.jpg" alt="מצוות הארץ" className="card1" />
@@ -42,7 +44,7 @@ function Order() {
         
             <img src="https://r-rdesign.co.il/wp-content/uploads/2023/09/pesahfront-copy.jpg" alt="פסח" className="card1"/>
         </div>
-
+        </div>
         <OffersTable />
 
         <Footer/>
