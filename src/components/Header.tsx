@@ -76,7 +76,7 @@ function Header() {
 
                 
                 </ul>
-                <ul className="navbar-nav flex-row">
+                <ul className="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center ">
                 
                 {
                     !isLoggedIn &&
