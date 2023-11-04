@@ -5,7 +5,7 @@ export const data = [
     name:"הלכות שבת" ,
     // price:10 ,
     image:"	https://r-rdesign.co.il/wp-content/uploads/2023/09/shabatkatarfront-copy.jpg" ,
-    description:"יהודי יקר כל שתרצה על מנת לשמור שבת" ,
+    description:"כל שתרצה על מנת לשמור שבת" ,
     category: Categories.shabat  
     },
     {
@@ -13,7 +13,7 @@ export const data = [
     name:"חגים ומועדים",
     // price:10 ,
     image:"	https://r-rdesign.co.il/wp-content/uploads/2023/09/rushashanafront-copy.jpg" ,
-    description:"יהודי יקר כל שתרצה על מנת לשמור חגים" ,
+    description:"כל שתרצה על מנת לשמור חגים" ,
     category: Categories.hagim
     } ,
     {
@@ -21,7 +21,7 @@ export const data = [
     name:"סדר יום",
     // price:10 ,
     image:"	https://r-rdesign.co.il/wp-content/uploads/2023/09/sederyomfront-copy.jpg" ,
-    description:"יהודי יקר כל שתרצה על מנת להתחיל את יומך" ,
+    description:"כל שתרצה על מנת להתחיל את יומך" ,
     category: Categories.sederYom
     },
     {
@@ -29,15 +29,15 @@ export const data = [
     name:"הלכות לנשים" ,
     // price:10 ,
     image:"	https://r-rdesign.co.il/wp-content/uploads/2023/09/liyotatkatan-copy.jpg" ,
-    description:"יהודיה יקרה כל שתרצי בנוגע להלכות נשים" ,
+    description:"כל שתרצי בנוגע להלכות נשים" ,
     category: Categories.nashim  
     },
     {
         id:5,
-    name:"מוסר",
+    name:" ספרי מוסר",
     // price:10 ,
     image:"https://r-rdesign.co.il/wp-content/uploads/2023/09/pirkeavotfront-copy.jpg" ,
-    description:"יהודי יקר כל שתרצה בנושא המוסר" ,
+    description:"כל שתרצה בנושא המוסר" ,
     category: Categories.musar
     } ,
     {
@@ -45,7 +45,7 @@ export const data = [
     name:"שונות",
     // price:10 ,
     image:"https://r-rdesign.co.il/wp-content/uploads/2023/09/britmukafront-copy.jpg" ,
-    description:"יהודי יקר כאן יש את כל הנושאים הנוספים במהלך השנה" ,
+    description:" כל הנושאים הנוספים במהלך השנה" ,
     category: Categories.shonot
     } 
 ];

@@ -2,7 +2,7 @@
 interface Props {
     name: string;
     // price: number;
-    description: string;
+   // description: string;
     image : string;
     category: string;
     CategoryClick: Function;
@@ -12,7 +12,7 @@ interface Props {
 function Card({
     name,
     // price,
-     description ,
+     //description ,
      image ,
       category,
       CategoryClick
@@ -26,7 +26,7 @@ function Card({
     
     return ( 
       <div className="">
-        <div className="card1 m-4 " >
+        <div className="card1 m-4 card align-items-center" >
         <img src={image} className="card-img-top img-fluid" alt={name}/>
         <div 
           onClick={() => CategoryClick(category)}>
@@ -34,15 +34,17 @@ function Card({
           </div>
         <div className="card-body ">
           {/* <h5 className="card-title text-center">{name}</h5> */}
-          <p className="card-text">{description}</p>
+          {/* <p className="card-text ">{description}</p> */}
           {/* <p className="card-text">{price}</p> */}
+          <button type="button" className="btn bg-primary">
           <a 
           onClick={(e) => handleClick(name)}
           href='/offers' 
-          className="btn btn-primary d-flex "
+          className="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover d-flex "
         >
           עבור לעמוד ספרים ומבצעים
           </a>
+          </button>
         </div>
       </div>
       </div>

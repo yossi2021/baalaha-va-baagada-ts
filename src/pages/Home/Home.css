@@ -4,11 +4,12 @@
     justify-content: space-around;
     
     
+    
 }
 
 .list{
     display: flex;
-    
+    margin-right: 20px;
     flex-direction: column;
     max-width: 350px;
     align-items: center;

@@ -9,10 +9,10 @@ export interface CardType {
 
 export enum Categories {
    all = 'לכל הקטגוריות',
-   shabat = 'שבת',
+   shabat = 'הלכות שבת',
    hagim = 'הלכות חגי ישראל',
    sederYom = 'הלכות סדר יום',
    nashim = 'הלכות נשים',
-   musar = 'מוסר',
+   musar = ' ספרי מוסר',
    shonot = 'שונות'
 }
