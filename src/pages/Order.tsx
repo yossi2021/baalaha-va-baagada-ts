@@ -4,6 +4,7 @@ import Joi from "joi";
 import { toast } from "react-toastify";
 import Footer from "../components/Footer";
 import BigPic from "../components/BigPic";
+import Title from "../components/Title";
 
 function Offers() {
     const [vacation , setVacation] = useState<string>('');
@@ -45,16 +46,13 @@ function Offers() {
         <>
         
         <BigPic/>
-        <main className="text-end p-5">
-            <h3 className="mb-3">בדוק האם יש בעיר הזו ספרים</h3>
-            <h5>
-            שלח בקשתך אלינו
-            </h5>
-            ונחזיר לך תשובה בהקדם על זמינות הספרים בעיר המבוקשת
-            <p>
-                
-            </p>
-            <p className="text-center">
+        <main className="text-end p-3">
+            <Title content="בדוק  באיזו עיר יש את הספרים הרצויים"/>
+            <h4 className="">
+            שלח בקשתך אלינו ונחזיר לך תשובה בהקדם על זמינות הספרים בעיר המבוקשת
+            </h4>
+           
+            <p className="text-end ">
             משלוח עד הבית בעלות 60 ₪ במייל:
             <a href="mailto:6410995@gmail.com" className="text-black">6410995@gmail.com</a>
             </p>

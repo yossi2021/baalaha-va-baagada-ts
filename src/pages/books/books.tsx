@@ -68,6 +68,7 @@ function Books() {
         
             <BookContext.Provider value={{books , delBook}}>
                 <BigPic/>
+                <main className="text-end p-3">
                 <div className="text-center">
                     <Title 
                     content=" הזמנות באיסוף עצמי"
@@ -105,6 +106,7 @@ function Books() {
                             </table>
                             
                     </Panel>
+                    </main>
                     <Footer/>
                     
                 </BookContext.Provider> 

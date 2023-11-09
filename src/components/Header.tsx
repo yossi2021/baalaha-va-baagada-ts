@@ -29,7 +29,7 @@ function Header() {
                         aria-current="page"
                         to="/"
                         >
-                            <i className="bi-book me-2"> </i>
+                            <i className="bi-book ms-2"> </i>
                             דף הבית
                     </NavLink>
                     

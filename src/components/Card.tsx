@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 /* eslint-disable jsx-a11y/anchor-is-valid */
 interface Props {
     name: string;
@@ -25,6 +27,7 @@ function Card({
       
     
     return ( 
+      
       <div className="">
         <div className="card1 m-4 card align-items-center" >
         <img src={image} className="card-img-top img-fluid" alt={name}/>
@@ -37,13 +40,21 @@ function Card({
           {/* <p className="card-text ">{description}</p> */}
           {/* <p className="card-text">{price}</p> */}
           <button type="button" className="btn bg-primary">
-          <a 
+          {/* <a 
           onClick={(e) => handleClick(name)}
           href='/offers' 
           className="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover d-flex "
         >
           עבור לעמוד ספרים ומבצעים
-          </a>
+          </a> */}
+          <NavLink 
+                        onClick={(e) => handleClick(name)}
+                        className="link-light link-offset-2 link-underline-opacity-0 link-underline-opacity-100-hover d-flex"
+                        aria-current="page"
+                        to="/offers" 
+                        >
+          עבור לעמוד ספרים ומבצעים
+                    </NavLink>
           </button>
         </div>
       </div>

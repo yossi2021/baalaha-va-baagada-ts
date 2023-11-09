@@ -10,9 +10,10 @@ function Order() {
     return (  
         <>
         <BigPic/>
-        <Title
-        content=" הספרים והמבצעים שלנו"
-        />
+        <main className="text-end p-3">
+        <Title content="הספרים והמבצעים שלנו"/>
+        
+        
         <div className="text-center ">
             <p>
                 עלות ספר היא 10 ש"ח, בערים מסויימות יש מבצעים והנחות
@@ -212,7 +213,7 @@ function Order() {
         </div>
         </div>
         <OffersTable />
-
+        </main>
         <Footer/>
         
             </>

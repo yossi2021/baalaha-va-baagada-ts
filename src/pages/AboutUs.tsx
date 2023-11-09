@@ -1,5 +1,6 @@
 import BigPic from "../components/BigPic";
 import Footer from "../components/Footer";
+import Title from "../components/Title";
 
 function  AboutUs() {
     return ( 
@@ -7,9 +8,9 @@ function  AboutUs() {
         <>
         <BigPic/>
         <div className="align-items-center card-body p-3">
-                <div className=" text-writh ">
-                    <h1 className="me-2">  אודות ספרי בהלכה ובאגדה ומה מטרתם
-                    </h1>
+                <div className=" text-end ">
+                    <Title content=" אודות ספרי בהלכה ובאגדה ומה מטרתם
+                    "/> 
                     <h5 className="me-2">
                         סדרת הספרים שלפניכם מונגשת לכולם,
                         לעיתים כשמגיעים ללמוד הלכות יש קושי מסויים מפאת קושי ההבנה של המושגים החדשים או מפאת קושי הלשון והסגנון.
