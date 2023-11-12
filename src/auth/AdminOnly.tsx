@@ -1,4 +1,5 @@
 import Footer from "../components/Footer";
+import Title from "../components/Title";
 
 function AdminOnly() {
     
@@ -7,11 +8,11 @@ function AdminOnly() {
     if (admin === "true") {
         return (
             <>
-            <h3 className="text-center">
-                הגעת לדף שמורשה רק למנהל
-            </h3>
+            <div className="p-3">
+            <Title content="מנהל יקר התחברת בהצלחה"/>
+            </div>
             <h5 className="text-center">
-                מנהל יקר התחברת בהצלחה 
+                אם כבר התחברת אז תתחיל לנהל שיהיה המון בהצלחה
             </h5>
             <div className="fixed-bottom">
         <Footer/>
@@ -21,9 +22,12 @@ function AdminOnly() {
     } 
     return ( 
         <>
-        <div className="text-danger text-center">
-            <h2 className="mt-5"> אין גישה  </h2>
+        <div className="p-3">
+        <Title content=" אין גישה"/>
         </div>
+        <h3 className="text-danger text-center">
+     עמוד זה למורשים בלבד !!!  הגישה נדחתה על ידי המערכת
+        </h3>
         <div className="fixed-bottom">
         <Footer/>
         </div>

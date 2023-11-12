@@ -27,7 +27,7 @@ function Order() {
         </div>
 
         {/* <OffersTable /> */}
-        <div className="grid p-5">
+        <div className="grid p-5 ">
         <div className="row  row-cols-1 row-cols-md-2  g-4 text-center rounded-2 ms-auto p-1 row-cols-sm-2 row-cols-lg-3  ">
             
         <div className="card align-items-center">

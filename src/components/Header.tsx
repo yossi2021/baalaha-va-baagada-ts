@@ -10,7 +10,7 @@ function Header() {
 
     return ( 
         <>
-        <header className="sticky-sm-top">
+        <header className="sticky-sm-top" >
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark ">
         <div className="display-grid ">
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -20,7 +20,7 @@ function Header() {
                 <i className="bi-book me-2"> </i>
                     בהלכה ובאגדה
             </a> */}
-            
+            <div>
             <div className="collapse navbar-collapse " id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center ">
                 <li className="nav-item me-3">
@@ -50,7 +50,7 @@ function Header() {
                         aria-current="page"
                         to="/Offers" 
                         >
-                            הספרים שלנו
+                        ספרים ומבצעים
                     </NavLink>
                 </li>
                 <li className="nav-item me-3">
@@ -120,10 +120,13 @@ function Header() {
                 }
                  
             </ul>
-            
+
             </div> 
-             
+            </div>
+
         </div>
+        <p className="text-dark bg-light px-2 rounded-pill p-1 m-1">בהלכה ובאגדה</p>
+
         <User/>
     </nav>
     
