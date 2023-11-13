@@ -3,11 +3,7 @@
     flex-flow: wrap;
     justify-content: space-around;
     margin: 10px;
-    
-    
-    
-    
-    
+   
 }
 
 .list{
@@ -19,13 +15,14 @@
     
 }
 .card1{
-    width: 350px;
+    width: 325px;
     
     border: 2px solid rgb(201, 197, 197);
     border-radius: 5px;
     padding: 5px;
     
 }
+
 
 
 

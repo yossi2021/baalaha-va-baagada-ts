@@ -14,7 +14,7 @@ function Order() {
         <Title content="הספרים והמבצעים שלנו"/>
         
         
-        <div className="text-center ">
+        <div className="text-end ">
             <p>
                 עלות ספר היא 10 ש"ח, בערים מסויימות יש מבצעים והנחות
             </p>

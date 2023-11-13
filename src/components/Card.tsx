@@ -30,7 +30,7 @@ function Card({
       
       <div className="">
         <div className="card1 m-4 card align-items-center" >
-        <img src={image} className="card-img-top img-fluid" alt={name}/>
+        <img src={image} className="card-img-top " alt={name}/>
         <div 
           onClick={() => CategoryClick(category)}>
           {category}
