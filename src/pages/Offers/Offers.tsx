@@ -27,10 +27,11 @@ function Order() {
         </div>
 
         {/* <OffersTable /> */}
-        <div className="grid p-5 ">
-        <div className="row  row-cols-1 row-cols-md-2  g-4 text-center rounded-2 ms-auto p-1 row-cols-sm-2 row-cols-lg-3  ">
+        
+        <div className="grid ">
+        {/* <div className="row  row-cols-1 row-cols-md-2  g-4 text-center rounded-2 ms-auto p-1 row-cols-sm-2 row-cols-lg-3  "> */}
             
-        <div className="card align-items-center">
+        <div className="card1 m-4 card align-items-center" >
           <img src="https://r-rdesign.co.il/wp-content/uploads/2023/09/sukotfront-copy.jpg" className="card-img-top" alt="חג סוכות"/>
           <div className="btn-group m-2" role="group" aria-label="Basic example">
             <button type="button" className="btn bg-primary">
@@ -40,7 +41,7 @@ function Order() {
           </div>
         </div>
 
-        <div className="card align-items-center">
+        <div className="card1 m-4 card align-items-center" >
           <img src="https://r-rdesign.co.il/wp-content/uploads/2023/09/mitzvataaratzfront-copy.jpg" alt="מצוות הארץ" className="card-img-top" />
           <div className="btn-group m-2" role="group" aria-label="Basic example">
             <button type="button" className="btn bg-primary">
@@ -50,7 +51,7 @@ function Order() {
           </div>
         </div>
 
-        <div className="card align-items-center">
+        <div className="card1 m-4 card align-items-center" >
           <img src="https://r-rdesign.co.il/wp-content/uploads/2023/09/rushhodeshfront-copy.jpg" className="card-img-top" alt="ראש חודש"/> 
           <div className="btn-group m-2" role="group" aria-label="Basic example">
             <button type="button" className="btn bg-primary">
@@ -60,7 +61,7 @@ function Order() {
           </div>
         </div>
 
-        <div className="card align-items-center">
+        <div className="card1 m-4 card align-items-center" >
           <img src="https://r-rdesign.co.il/wp-content/uploads/2023/09/kibutfront-copy.jpg" alt="כיבוד אב ואם" className="card-img-top" />
           <div className="btn-group m-2" role="group" aria-label="Basic example">
             <button type="button" className="btn bg-primary">
@@ -70,7 +71,7 @@ function Order() {
           </div>
         </div>
 
-        <div className="card align-items-center">
+        <div className="card1 m-4 card align-items-center" >
           <img src="https://r-rdesign.co.il/wp-content/uploads/2023/09/nisuinfront-copy.jpg" alt="הנישואין" className="card-img-top" />
           <div className="btn-group m-2" role="group" aria-label="Basic example">
             <button type="button" className="btn bg-primary">
@@ -80,7 +81,7 @@ function Order() {
           </div>
         </div>
 
-        <div className="card align-items-center">
+        <div className="card1 m-4 card align-items-center" >
           <img src="https://r-rdesign.co.il/wp-content/uploads/2023/09/hanucafront-copy.jpg" alt="חנוכה" className="card-img-top" />
           <div className="btn-group m-2" role="group" aria-label="Basic example">
             <button type="button" className="btn bg-primary">
@@ -90,7 +91,7 @@ function Order() {
           </div>
         </div>
 
-        <div className="card align-items-center">
+        <div className="card1 m-4 card align-items-center" >
           <img src="https://r-rdesign.co.il/wp-content/uploads/2023/09/4taniyutfront-copy.jpg" alt="ארבע התעניות" className="card-img-top" />
           <div className="btn-group m-2" role="group" aria-label="Basic example">
             <button type="button" className="btn bg-primary">
@@ -100,7 +101,7 @@ function Order() {
           </div>
         </div>
 
-        <div className="card align-items-center">
+        <div className="card1 m-4 card align-items-center" >
           <img src="https://r-rdesign.co.il/wp-content/uploads/2023/09/britmukafront-copy.jpg" alt="ברית מילה" className="card-img-top" />
           <div className="btn-group m-2" role="group" aria-label="Basic example">
             <button type="button" className="btn bg-primary">
@@ -110,7 +111,7 @@ function Order() {
           </div>
         </div>
 
-        <div className="card align-items-center">
+        <div className="card1 m-4 card align-items-center" >
           <img src="https://r-rdesign.co.il/wp-content/uploads/2023/09/seoda-copy.jpg" alt="הסעודה" className="card-img-top" />
           <div className="btn-group m-2" role="group" aria-label="Basic example">
             <button type="button" className="btn bg-primary">
@@ -120,7 +121,7 @@ function Order() {
           </div>
         </div>
 
-        <div className="card align-items-center">
+        <div className="card1 m-4 card align-items-center" >
           <img src="https://r-rdesign.co.il/wp-content/uploads/2023/09/shabatfront-copy.jpg" alt="השבת" className="card-img-top" />
           <div className="btn-group m-2" role="group" aria-label="Basic example">
             <button type="button" className="btn bg-primary m-1">
@@ -134,7 +135,7 @@ function Order() {
           </div>
         </div>
 
-        <div className="card align-items-center">
+        <div className="card1 m-4 card align-items-center" >
           <img src="https://r-rdesign.co.il/wp-content/uploads/2023/09/pesahfront-copy.jpg" alt=" חג פסח" className="card-img-top" />
           <div className="btn-group m-2" role="group" aria-label="Basic example">
             <button type="button" className="btn bg-primary">
@@ -144,7 +145,7 @@ function Order() {
           </div>
         </div>
 
-        <div className="card align-items-center">
+        <div className="card1 m-4 card align-items-center" >
           <img src="https://r-rdesign.co.il/wp-content/uploads/2023/09/rushashanafront-copy.jpg" className="card-img-top" alt=" ראש השנה ויום כיפור"/>
           <div className="btn-group m-2" role="group" aria-label="Basic example">
             <button type="button" className="btn bg-primary">
@@ -154,7 +155,7 @@ function Order() {
           </div>
         </div>
 
-        <div className="card align-items-center">
+        <div className="card1 m-4 card align-items-center" >
           <img src="https://r-rdesign.co.il/wp-content/uploads/2023/09/sederyomfront-copy.jpg" className="card-img-top" alt=" סדר היום"/>
           <div className="btn-group m-2" role="group" aria-label="Basic example">
             <button type="button" className="btn bg-primary">
@@ -164,7 +165,7 @@ function Order() {
           </div>
         </div>
 
-        <div className="card align-items-center">
+        <div className="card1 m-4 card align-items-center" >
           <img src="https://r-rdesign.co.il/wp-content/uploads/2023/09/liyotatkatan-copy.jpg" className="card-img-top" alt=" להיות את"/>
           <div className="btn-group m-2" role="group" aria-label="Basic example">
             <button type="button" className="btn bg-primary">
@@ -174,7 +175,7 @@ function Order() {
           </div>
         </div>
 
-        <div className="card align-items-center">
+        <div className="card1 m-4 card align-items-center" >
           <img src="https://r-rdesign.co.il/wp-content/uploads/2023/09/pirkeavotfront-copy.jpg" className="card-img-top" alt="  פרקי אבות"/>
           <div className="btn-group m-2" role="group" aria-label="Basic example">
             <button type="button" className="btn bg-primary">
@@ -184,7 +185,7 @@ function Order() {
           </div>
         </div>
 
-        <div className="card align-items-center">
+        <div className="card1 m-4 card align-items-center" >
           <img src="https://r-rdesign.co.il/wp-content/uploads/2023/09/mitbahback-copy.jpg" alt="כשרות המטבח" className="card-img-top" />
           <div className="btn-group m-2" role="group" aria-label="Basic example">
             <button type="button" className="btn bg-primary">
@@ -211,7 +212,7 @@ function Order() {
         
             <img src="https://r-rdesign.co.il/wp-content/uploads/2023/09/pesahfront-copy.jpg" alt="פסח" className="card1"/> */}
         </div>
-        </div>
+        {/* </div> */}
         <OffersTable />
         </main>
         <Footer/>
