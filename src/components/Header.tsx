@@ -10,10 +10,10 @@ function Header() {
 
     return ( 
         <>
-        <header className="sticky-sm-top" >
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark ">
+        <header className=" position-fixed z-3" >
+    <nav className="navbar navbar-expand-lg bg-white ">
         <div className="display-grid ">
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button className="navbar-toggler m-1 " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon"></span>
             </button>
             {/* <a className="navbar-brand " href="./">
@@ -22,8 +22,8 @@ function Header() {
             </a> */}
             <div>
             <div className="collapse navbar-collapse " id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center ">
-                <li className="nav-item me-3">
+            <ul className="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center">
+                <li className="nav-item ms-1 ">
                     <NavLink                         
                         className="nav-link"
                         aria-current="page"
@@ -34,7 +34,7 @@ function Header() {
                     </NavLink>
                     
                 </li>
-                <li className="nav-item me-3">
+                <li className="nav-item me-2">
                     <NavLink                         
                         className="nav-link"
                         aria-current="page"
@@ -44,7 +44,7 @@ function Header() {
                     </NavLink>
                 </li>
                 
-                <li className="nav-item me-3">
+                <li className="nav-item me-2">
                     <NavLink 
                         className="nav-link"
                         aria-current="page"
@@ -53,7 +53,7 @@ function Header() {
                         ספרים ומבצעים
                     </NavLink>
                 </li>
-                <li className="nav-item me-3">
+                <li className="nav-item me-2">
                     <NavLink  
                         className="nav-link"
                         aria-current="page"
@@ -64,7 +64,7 @@ function Header() {
                 </li>
                 
                 
-                <li className="nav-item me-3">
+                <li className="nav-item me-2">
                     <NavLink                         
                         className="nav-link"
                         aria-current="page"
@@ -76,12 +76,12 @@ function Header() {
 
                 
                 </ul>
-                <ul className="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center ">
+                <ul className="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center">
                 
                 {
                     !isLoggedIn &&
                     <>
-                        <li className="nav-item me-3">
+                        <li className="nav-item me-2">
                             <NavLink                         
                                 className="nav-link"
                                 aria-current="page"
@@ -90,7 +90,7 @@ function Header() {
                                     הרשמה
                             </NavLink>
                         </li>
-                        <li className="nav-item me-3">
+                        <li className="nav-item me-2">
                             <NavLink 
                                 className="nav-link"
                                 aria-current="page"
@@ -99,7 +99,7 @@ function Header() {
                                 התחבר
                             </NavLink>
                         </li>
-                        <li className="nav-item me-3">
+                        <li className="nav-item me-2">
                     <NavLink 
                         className="nav-link"
                         aria-current="page"
@@ -125,9 +125,10 @@ function Header() {
             </div>
 
         </div>
-        <p className="text-dark bg-light px-2 rounded-pill p-1 m-1">בהלכה ובאגדה</p>
+        <p className=" text-light bg-dark px-2 rounded-pill p-1 m-1">בהלכה ובאגדה</p>
 
         <User/>
+
     </nav>
     
         

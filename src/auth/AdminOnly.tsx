@@ -8,7 +8,8 @@ function AdminOnly() {
     if (admin === "true") {
         return (
             <>
-            <div className="p-3">
+            <div className="p-2"></div>
+            <div className="p-5">
             <Title content="מנהל יקר התחברת בהצלחה"/>
             </div>
             <h5 className="text-center">
@@ -22,10 +23,11 @@ function AdminOnly() {
     } 
     return ( 
         <>
-        <div className="p-3">
+        <div className="p-2"></div>
+        <div className="p-5">
         <Title content=" אין גישה"/>
         </div>
-        <h3 className="text-danger text-center">
+        <h3 className="text-danger text-center ">
      עמוד זה למורשים בלבד !!!  הגישה נדחתה על ידי המערכת
         </h3>
         <div className="fixed-bottom">

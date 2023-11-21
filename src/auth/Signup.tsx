@@ -68,7 +68,8 @@ function Signup() {
 
     return ( 
         <>
-        <div className="p-3 form-max-w m-auto" >
+        <div className="p-2"></div>
+        <div className="p-5 form-max-w m-auto" >
             <Title
                 content="הרשמה"
             />
