@@ -11,10 +11,10 @@ function Header() {
     return ( 
         <>
         <header className=" position-fixed z-3" >
-    <nav className="navbar navbar-expand-lg bg-white ">
+    <nav className="navbar navbar-expand-lg bg-white">
         <div className="display-grid ">
-        <button className="navbar-toggler m-2 z-2 rounded-pill " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span className="text-dark ">בהלכה ובאגדה</span>
+        <button className="navbar-toggler m-1 z-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span className="navbar-toggler-icon"></span>
             </button>
             {/* <a className="navbar-brand " href="./">
                 <i className="bi-book me-2"> </i>
