@@ -10,7 +10,7 @@ function  Logout() {
           <>
             <button 
             onClick={(e) => context.handleLogout()}
-            className="btn btn-link nav-link"
+            className="btn btn-link nav-link hover"
             >
                  התנתק
             </button>

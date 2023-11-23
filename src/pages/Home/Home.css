@@ -25,10 +25,18 @@
 .navbar-nav .nav-link.active, .navbar-nav .nav-link.show{
     background-color: gainsboro;
     border-radius: 10px;
-    padding: 3px;
+    padding: 8px;
     margin-top: 6px;
 }
 
 /* .navbar-toggler {
     background-color: gainsboro;
 } */
+
+a.hover{
+    background-color:#bab0a9;
+    color: white;
+    border-radius: 5px;
+    padding: 3px;
+    margin: 2px;
+}

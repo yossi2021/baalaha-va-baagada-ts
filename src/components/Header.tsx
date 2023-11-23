@@ -23,20 +23,20 @@ function Header() {
             <div>
             <div className="collapse navbar-collapse px-2" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center ">
-                <li className="nav-item ms-1 ">
+                <li className="nav-item  ">
                     <NavLink                         
-                        className="nav-link"
+                        className="nav-link hover"
                         aria-current="page"
                         to="/"
                         >
-                            <i className="bi-book ms-2"> </i>
+                            <i className="bi-book ms-1"> </i>
                             דף הבית
                     </NavLink>
                     
                 </li>
                 <li className="nav-item me-2">
                     <NavLink                         
-                        className="nav-link"
+                        className="nav-link hover"
                         aria-current="page"
                         to="/AboutUs"
                         >
@@ -46,7 +46,7 @@ function Header() {
                 
                 <li className="nav-item me-2">
                     <NavLink 
-                        className="nav-link"
+                        className="nav-link hover"
                         aria-current="page"
                         to="/Offers" 
                         >
@@ -55,7 +55,7 @@ function Header() {
                 </li>
                 <li className="nav-item me-2">
                     <NavLink  
-                        className="nav-link"
+                        className="nav-link hover"
                         aria-current="page"
                         to="/Books"
                         >
@@ -66,7 +66,7 @@ function Header() {
                 
                 <li className="nav-item me-2">
                     <NavLink                         
-                        className="nav-link"
+                        className="nav-link hover"
                         aria-current="page"
                         to="/Order"
                         >
@@ -83,7 +83,7 @@ function Header() {
                     <>
                         <li className="nav-item me-2">
                             <NavLink                         
-                                className="nav-link"
+                                className="nav-link hover"
                                 aria-current="page"
                                 to="/signup"
                                 >
@@ -92,7 +92,7 @@ function Header() {
                         </li>
                         <li className="nav-item me-2">
                             <NavLink 
-                                className="nav-link"
+                                className="nav-link hover"
                                 aria-current="page"
                                 to="/login"
                                 >
@@ -101,7 +101,7 @@ function Header() {
                         </li>
                         <li className="nav-item me-2">
                     <NavLink 
-                        className="nav-link"
+                        className="nav-link hover"
                         aria-current="page"
                         to="/admin" 
                         >
@@ -113,7 +113,7 @@ function Header() {
                 }
                 {
                     isLoggedIn &&
-                    <li className="nav-item">
+                    <li className="nav-item hover">
                     <Logout />
                     
                     </li>
