@@ -51,8 +51,8 @@ function OffersTable() {
 
     return ( 
         <>
-            <h2 className="text-center my-4">
-            <br />
+            <h2 className="text-center text-light m-4 p-2 bg-secondary">
+            <br /> כאן תוכלו לבדוק את המחיר המעודכן של הספרים בערים השונות
             <small className="text-muted ">
                 
             </small>
@@ -85,11 +85,11 @@ function OffersTable() {
             {
                     offers.length > 0 &&
                     <table className="table table-hover">
-                        <thead>
+                        <thead >
                             <tr>
-                                <th className="w-25 " >תאריך</th>
-                                <th className="w-25  ">שם העיר</th>
-                                <th className="w-25 ">המחיר המעודכן לספר</th>
+                                <th className="w-25 bg-dark text-light align-top" >תאריך</th>
+                                <th className="w-25  bg-dark text-light align-top">שם העיר</th>
+                                <th className="w-25 bg-dark text-light align-top">המחיר המעודכן לספר</th>
                             </tr>
                         </thead>
                         <tbody>

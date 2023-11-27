@@ -83,7 +83,7 @@ function Header() {
                     <>
                         <li className="nav-item me-2">
                             <NavLink                         
-                                className="nav-link hover"
+                                className="nav-link hover bg-warning"
                                 aria-current="page"
                                 to="/signup"
                                 >
@@ -92,7 +92,7 @@ function Header() {
                         </li>
                         <li className="nav-item me-2">
                             <NavLink 
-                                className="nav-link hover"
+                                className="nav-link hover bg-warning"
                                 aria-current="page"
                                 to="/login"
                                 >
@@ -101,7 +101,7 @@ function Header() {
                         </li>
                         <li className="nav-item me-2">
                     <NavLink 
-                        className="nav-link hover"
+                        className="nav-link hover bg-warning"
                         aria-current="page"
                         to="/admin" 
                         >
