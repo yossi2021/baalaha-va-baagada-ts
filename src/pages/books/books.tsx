@@ -91,9 +91,9 @@ function Books() {
                     <table className="table table-hover">
                                 <thead>
                                     <tr>
-                                        <th className="w-25">תאריך הזמנות</th>
-                                        <th className="w-25">עיר לאיסוף</th>
-                                        <th className="w-50">כמות הספרים שארצה</th>
+                                        <th className="w-25  align-top">תאריך הזמנות</th>
+                                        <th className="w-25  align-top">עיר לאיסוף</th>
+                                        <th className="w-50  align-top">כמות הספרים שארצה</th>
                                         <th></th>
                                     </tr>
                                 </thead>

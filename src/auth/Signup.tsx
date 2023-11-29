@@ -109,6 +109,7 @@ function Signup() {
                 שלח
             </button>
         </div>
+        {/* <div className="boxAnimation">יום טוב ומבורך</div> */}
         <div className="fixed-bottom">
         <Footer/>
         </div>

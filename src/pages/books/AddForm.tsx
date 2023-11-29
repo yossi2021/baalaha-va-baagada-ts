@@ -64,16 +64,12 @@ function AddForm({ addBooks }: Props ) {
         <>
         
         <div className="bg-light d-flex p-4 align-items-center ">
-        <button onClick={handleClick}
-          className="btn btn-info ms-3"
-          >
-            הוסף
-          </button>
+        
           
         <input 
         value={date}
         onChange={(e) => setDate(e.target.value)}
-        className="form-control me-3 text-center"
+        className="form-control me-3 text-center  "
          type="text"
          placeholder="תאריך"
           />
@@ -93,6 +89,11 @@ function AddForm({ addBooks }: Props ) {
           />
         
     </div>
+    <button onClick={handleClick}
+          className="btn btn-info m-3 "
+          >
+            הוסף
+          </button>
     
 
     
