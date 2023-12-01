@@ -51,8 +51,8 @@ function OffersTable() {
 
     return ( 
         <>
-            <h2 className="text-center text-light m-4 p-2 bg-secondary">
-            <br /> כאן תוכלו לבדוק את המחיר המעודכן של הספרים בערים השונות
+            <h2 className="text-center text-light m-4 p-3 bg-secondary ">
+             כאן תוכלו לבדוק את המחיר המעודכן של הספרים בערים השונות
             <small className="text-muted ">
                 
             </small>

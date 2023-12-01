@@ -10,16 +10,16 @@ function Header() {
 
     return ( 
         <>
-        <header className=" position-fixed z-3" >
-    <nav className="navbar navbar-expand-lg bg-white">
+        <header className=" position-fixed z-3 "  >
+    <nav className="navbar navbar-expand-lg bg-white rounded-bottom">
         <div className="display-grid mx-1">
             
-        <button className="navbar-toggler m-1 z-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button className="navbar-toggler m-1 z-2 " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon ms-5 px-2 "><h6 className="px-4">בהלכה ובאגדה</h6></span>
             </button>
             
             <div>
-            <div className="collapse navbar-collapse px-2" id="navbarSupportedContent">
+            <div className="collapse navbar-collapse px-2 " id="navbarSupportedContent">
 
             <ul className="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center ">
 

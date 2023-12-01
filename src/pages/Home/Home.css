@@ -49,18 +49,25 @@ a.hover{
 /* img:hover{
     opacity: 75%;
     
-}
+} */
 .boxAnimation {
-    width: 100px;
+    width: 200px;
   height: 100px;
-  background: rgb(110 117 124);
+  
   position: relative;
   animation: mymove 5s infinite;
   animation-timing-function: linear;
-  color: white;
+  
   padding: 5px;
   }
   @keyframes mymove {
-    from {right: 20px;}
-    to {right: 250px;}
-  } */
+    from {right: 2px;}
+    to {right: 100px;}
+  }
+
+
+  .bg-div{
+    background-color:#e3dbd557;
+    border-radius: 10px;
+    
+  }
