@@ -10,12 +10,12 @@ function Header() {
 
     return ( 
         <>
-        <header className=" position-fixed z-3 "  >
-    <nav className="navbar navbar-expand-lg bg-white rounded-bottom">
+        <header className=" container-fluid sticky-top z-3 "  >
+    <nav className="navbar navbar-expand-lg colorbrown1 ">
         <div className="display-grid mx-1">
             
         <button className="navbar-toggler m-1 z-2 " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span className="navbar-toggler-icon ms-5 px-2 "><h6 className="px-4">בהלכה ובאגדה</h6></span>
+              <span className="navbar-toggler-icon ms-5 px-3 "><h6 className="px-4 pb-1 text-light">בהלכה ובאגדה</h6></span>
             </button>
             
             <div>
@@ -83,7 +83,7 @@ function Header() {
                     <>
                         <li className="nav-item me-2">
                             <NavLink                         
-                                className="nav-link hover bg-success"
+                                className="nav-link hover "
                                 aria-current="page"
                                 to="/signup"
                                 >
@@ -92,16 +92,16 @@ function Header() {
                         </li>
                         <li className="nav-item me-2">
                             <NavLink 
-                                className="nav-link hover bg-primary"
+                                className="nav-link hover "
                                 aria-current="page"
                                 to="/login"
                                 >
                                 התחבר
                             </NavLink>
                         </li>
-                        <li className="nav-item me-2">
+                        <li className="nav-item me-2 ">
                     <NavLink 
-                        className="nav-link hover bg-warning"
+                        className="nav-link hover "
                         aria-current="page"
                         to="/admin" 
                         >
@@ -127,8 +127,9 @@ function Header() {
             </div>
 
         </div>
+        {/* <p className="p-1 m-1 text-light ">בהלכה ובאגדה</p> */}
+
     </nav>
-    
         
     </header>
     

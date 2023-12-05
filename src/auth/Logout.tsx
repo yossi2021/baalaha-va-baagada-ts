@@ -11,7 +11,7 @@ function  Logout() {
           <>
             <NavLink 
                    onClick={(e) => context.handleLogout()}
-                   className=" nav-link hover bg-danger" to="/Login"            >
+                   className=" nav-link hover bg-gradient border border-white p-2" to="/Login"            >
                  התנתק
             </NavLink>
             
