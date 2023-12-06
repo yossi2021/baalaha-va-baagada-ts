@@ -9,7 +9,7 @@ function Title({content} :Props)  {
     return (
         <>
         <div className="bg-secondary mb-5 p-2 text-white ">
-            <h2 className="text-center p-2 ">{content}</h2>
+            <h1 className="display-3 text-center p-2 ">{content}</h1>
             </div>
         
         </>

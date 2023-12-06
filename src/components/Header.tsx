@@ -10,10 +10,11 @@ function Header() {
 
     return ( 
         <>
-        <header className=" container-fluid sticky-top z-3 "  >
+        
+        <header className=" container-fluid sticky-top z-3 lead "  >
     <nav className="navbar navbar-expand-lg colorbrown1 ">
-        <div className="display-grid mx-1">
-            
+        <div className="display-grid mx-1 pb-1 pt-1">
+
         <button className="navbar-toggler m-1 z-2 " type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span className="navbar-toggler-icon ms-5 px-3 "><h6 className="px-4 pb-1 text-light">בהלכה ובאגדה</h6></span>
             </button>
@@ -32,7 +33,6 @@ function Header() {
                             <i className="bi-book ms-1"> </i>
                             דף הבית
                     </NavLink>
-                    
                 </li>
                 <li className="nav-item me-2">
                     <NavLink                         

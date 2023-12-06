@@ -47,7 +47,7 @@ function Offers() {
         
         <BigPic/>
         <main className="text-end p-3">
-            <Title content="בדוק  באיזו עיר יש את הספרים הרצויים"/>
+            <Title content="צרו איתנו קשר"/>
             <h4 className="">
             שלח בקשתך אלינו ונחזיר לך תשובה בהקדם על זמינות הספרים בעיר המבוקשת
             </h4>
