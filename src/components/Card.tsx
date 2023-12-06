@@ -29,17 +29,17 @@ function Card({
     return ( 
       
       <div className="">
-        <div className="card1 m-4 card align-items-center" >
-        <img src={image} className="card-img-top" alt={name}/>
+        <div className="card1 m-4 card align-items-center " >
+        <img src={image} className="card-img-top " alt={name}/>
         <div 
           onClick={() => CategoryClick(category)}>
-          {category}
+          {category} 
           </div>
         <div className="card-body ">
           {/* <h5 className="card-title text-center">{name}</h5> */}
           {/* <p className="card-text ">{description}</p> */}
           {/* <p className="card-text">{price}</p> */}
-          <button type="button" className="btn bg-primary">
+          <button type="button" className="colorbrown1 rounded-pill p-2">
           {/* <a 
           onClick={(e) => handleClick(name)}
           href='/offers' 

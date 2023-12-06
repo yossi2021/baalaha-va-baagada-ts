@@ -11,7 +11,7 @@ function Header() {
     return ( 
         <>
         
-        <header className=" container-fluid sticky-top z-3 lead "  >
+        <header className=" sticky-top z-3 lead "  >
     <nav className="navbar navbar-expand-lg colorbrown1 ">
         <div className="display-grid mx-1 pb-1 pt-1">
 
